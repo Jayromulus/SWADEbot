@@ -33,9 +33,10 @@ client.on('messageCreate', async (message) => {
             args.unshift(str);
           }
         }
-        let exp = /[0-9]d[0-9]+/g;
+        let exp = /[0-9]d[0-9]+/;
+        //let exp = /^\dd\d{1,6}$/;
         //console.log('premalf:', args);
-        let malformed = args.some(exp.test);
+        let malformed = args.some(e => !exp.test(e));
         console.log('malformed:', malformed);
         console.log('test:', exp.test(args[0]), exp.test(args[1]));
         if(malformed){
