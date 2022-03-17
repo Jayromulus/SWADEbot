@@ -1,55 +1,452 @@
 {
   "shortsword": {
-  	"damage": "1d6!,str"
+  	"damage": "1d6!,str",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "1",
+    "notes": "includes cavalry sabers",
+    "rof": 0,
+    "shots": 0
   },
   "longsword": {
-    "damage": "1d8!,str"
+    "damage": "1d8!,str",
+    "ap": 0,
+    "min_str": "d8",
+    "range": "1",
+    "notes": "basic swords and scimitars",
+    "rof": 0,
+    "shots": 0
   },
-  "greatsword": "1d10!,str",
-  "hand_axe": "1d6!,str",
-  "battleaxe": "1d8!,str",
-  "greataxe": "1d10!,str",
-  "light_club": "1d4!,str",
-  "heavy_club": "1d6!,str",
-  "dagger": "1d4!,str",
-  "knife": "1d4!,str",
-  "flail": "1d6!,str",
-  "halberd": "1d8!,str",
-  "katana": "1d6!+1,str",
-  "lance": "1d8!,str",
-  "mace": "1d6!,str",
-  "maul": " 1d10!,str",
-  "pike": "1d8!,str",
-  "rapier": "1d4!,str",
-  "spear": "1d6!,str",
-  "staff": "1d4!,str",
-  "warhammer": "1d6!,str",
-  "bangstick": "3d6!",
-  "bayonet": "1d4!,str",
-  "billy_club": "1d4!,str",
-  "baton": "1d4!,str",
-  "brass_knuckles": "1d4!,str",
-  "chainsaw": "2d6!,str",
-  "switchblade": "1d4!,str",
-  "survival_knife": "1d4!,str",
-  "molecular_knife": "1d4!+2,str",
-  "molecular_sword": "1d8!+2,str",
-  "laser_sword": "1d6!+8,str",
-  "throwing_axe": "1d6!,str",
-  "bow": "2d6!",
-  "hand_drawn_crossbow": "2d6!",
-  "heavy_crossbow": "2d8!",
-  "longbow": "2d6!",
-  "weighted_net": "0d0",
-  "sling": "1d4!,str",
-  "javelin": "1d6!,str",
-  "compoound_bow": "1d6!,str",
-  "crossbow": "2d6!",
-  "flintlock_pistol": "2d6!+1",
-  "musket": "2d8!",
-  "blunderbuss_far": "1d6!",
-  "blunderbuss_mid": "2d6!",
-  "blunderbuss close": "3d6!",
-  "kentucky_rifle": "2d8!",
-  "springfield_model_1861": "1d8!"
+  "greatsword": {
+    "damage": "1d10!,str",
+    "ap": 0,
+    "min_str": "d10",
+    "range": "1",
+    "notes": "two hands",
+    "rof": 0,
+    "shots": 0
+  },
+  "hand_axe": {
+    "damage": "1d6!,str",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "1",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "battleaxe": {
+    "damage": "1d8!,str",
+    "ap": 0,
+    "min_str": "d8",
+    "range": "1",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "greataxe": {
+    "damage": "1d10!,str",
+    "ap": 2,
+    "min_str": "d10",
+    "range": "1",
+    "notes": "parry - 1, two hands",
+    "rof": 0,
+    "shots": 0
+  },
+  "light_club": {
+    "damage": "1d4!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "1",
+    "notes": "a sign of low thuggery",
+    "rof": 0,
+    "shots": 0
+  },
+  "heavy_club": {
+    "damage": "1d6!,str",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "1",
+    "notes": "a sign of low thuggery",
+    "rof": 0,
+    "shots": 0
+  },
+  "dagger": {
+    "damage": "1d4!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "1 (3/6/12)",
+    "notes": "",
+    "rof": 1,
+    "shots": 0
+  },
+  "knife": {
+    "damage": "1d4!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "1 (3/6/12)",
+    "notes": "",
+    "rof": 1,
+    "shots": 0
+  },
+  "flail": {
+    "damage": "1d6!,str",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "1",
+    "notes": "ignores shield bonus",
+    "rof": 0,
+    "shots": 0
+  },
+  "halberd": {
+    "damage": "1d8!,str",
+    "ap": 0,
+    "min_str": "d8",
+    "range": "2",
+    "notes": "two hands",
+    "rof": 0,
+    "shots": 0
+  },
+  "katana": {
+    "damage": "1d6!+1,str",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "1",
+    "notes": "two hands",
+    "rof": 0,
+    "shots": 0
+  },
+  "lance": {
+    "damage": "1d8!,str",
+    "ap": 0,
+    "min_str": "d8",
+    "range": "3",
+    "notes": "AP 2 when charging, only usable in mounted combat",
+    "rof": 0,
+    "shots": 0
+  },
+  "mace": {
+    "damage": "1d6!,str",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "1",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "maul": {
+    "damage": " 1d10!,str",
+    "ap": 0,
+    "min_str": "d10",
+    "range": "1",
+    "notes": "two hands, +2 damage to break objects",
+    "rof": 0,
+    "shots": 0
+  },
+  "pike": {
+    "damage": "1d8!,str",
+    "ap": 0,
+    "min_str": "d8",
+    "range": "3",
+    "notes": "two hands",
+    "rof": 0,
+    "shots": 0
+  },
+  "rapier": {
+    "damage": "1d4!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "1",
+    "notes": "parry + 1",
+    "rof": 0,
+    "shots": 0
+  },
+  "spear": {
+    "damage": "1d6!,str",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "2 (3/6/12)",
+    "notes": "parry + 1 if used two handed",
+    "rof": 0,
+    "shots": 0
+  },
+  "staff": {
+    "damage": "1d4!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "2",
+    "notes": "parry + 1, two hands",
+    "rof": 0,
+    "shots": 0
+  },
+  "warhammer": {
+    "damage": "1d6!,str",
+    "ap": 1,
+    "min_str": "d6",
+    "range": "1",
+    "notes": "spiked",
+    "rof": 0,
+    "shots": 0
+  },
+  "bangstick": {
+    "damage": "3d6!",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "1",
+    "notes": "a shotgun shell on a stick to use in melee; must reload with a fresh shell (one action)",
+    "rof": 0,
+    "shots": 0
+  },
+  "bayonet": {
+    "damage": "1d4!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "2",
+    "notes": "two hands",
+    "rof": 0,
+    "shots": 0
+  },
+  "bayonet_on_rifle": {
+    "damage": "1d6!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "2",
+    "notes": "parry + 1",
+    "rof": 0,
+    "shots": 0
+  },
+  "billy_club": {
+    "damage": "1d4!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "1",
+    "notes": "often carried by law enforcement",
+    "rof": 0,
+    "shots": 0
+  },
+  "baton": {
+    "damage": "1d4!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "1",
+    "notes": "often carried by law enforcement",
+    "rof": 0,
+    "shots": 0
+  },
+  "brass_knuckles": {
+    "damage": "1d4!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "1",
+    "notes": "does not count as a weapon for **Unarmed Defender**",
+    "rof": 0,
+    "shots": 0
+  },
+  "chainsaw": {
+    "damage": "2d6!+4",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "1",
+    "notes": "critical failure hits the user",
+    "rof": 0,
+    "shots": 0
+  },
+  "switchblade": {
+    "damage": "1d4!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "1",
+    "notes": "-2 to notice if being hidden",
+    "rof": 0,
+    "shots": 0
+  },
+  "survival_knife": {
+    "damage": "1d4!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "1",
+    "notes": "basic tools in handle add + 1 to survival rolls",
+    "rof": 0,
+    "shots": 0
+  },
+  "molecular_knife": {
+    "damage": "1d4!+2,str",
+    "ap": 2,
+    "min_str": "d4",
+    "range": "1",
+    "notes": "cannot be thrown",
+    "rof": 0,
+    "shots": 0
+  },
+  "molecular_sword": {
+    "damage": "1d8!+2,str",
+    "ap": 4,
+    "min_str": "d6",
+    "range": "1",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "laser_sword": {
+    "damage": "1d6!+8,str",
+    "ap": 12,
+    "min_str": "d4",
+    "range": "1",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "throwing_axe": {
+    "damage": "1d6!,str",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "3/6/12",
+    "notes": "",
+    "rof": 1,
+    "shots": 0
+  },
+  "bow": {
+    "damage": "2d6!",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "12/24/48",
+    "notes": "",
+    "rof": 1,
+    "shots": 0
+  },
+  "hand_drawn_crossbow": {
+    "damage": "2d6!",
+    "ap": 2,
+    "min_str": "d6",
+    "range": "10/20/40",
+    "notes": "",
+    "rof": 1,
+    "shots": 0
+  },
+  "heavy_crossbow": {
+    "damage": "2d8!",
+    "ap": 2,
+    "min_str": "d6",
+    "range": "15/30/60",
+    "notes": "",
+    "rof": 1,
+    "shots": 0
+  },
+  "longbow": {
+    "damage": "2d6!",
+    "ap": 1,
+    "min_str": "d8",
+    "range": "15/30/60",
+    "notes": "",
+    "rof": 1,
+    "shots": 0
+  },
+  "weighted_net": {
+    "damage": "0d0",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "1",
+    "notes": "a successful hit means the target is **Entangled**. the net is Hardness 10 and is vulnerable only to cutting attacks",
+    "rof": 1,
+    "shots": 0
+  },
+  "sling": {
+    "damage": "1d4!,str",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "4/8/16",
+    "notes": "",
+    "rof": 1,
+    "shots": 0
+  },
+  "javelin": {
+    "damage": "1d6!,str",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "3/6/12",
+    "notes": "",
+    "rof": 1,
+    "shots": 0
+  },
+  "compound_bow": {
+    "damage": "1d6!,str",
+    "ap": 1,
+    "min_str": "d6",
+    "range": "12/24/48",
+    "notes": "",
+    "rof": 1,
+    "shots": 0
+  },
+  "crossbow": {
+    "damage": "2d6!",
+    "ap": 2,
+    "min_str": "d6",
+    "range": "15/30/60",
+    "notes": "",
+    "rof": 1,
+    "shots": 0
+  },
+  "flintlock_pistol": {
+    "damage": "2d6!+1",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "5/10/20",
+    "notes": "reload 3",
+    "rof": 1,
+    "shots": 0
+  },
+  "musket": {
+    "damage": "2d8!",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "10/20/40",
+    "notes": "reload 3",
+    "rof": 1,
+    "shots": 0
+  },
+  "blunderbuss_far": {
+    "damage": "1d6!",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "3",
+    "notes": "treated as a shotgun (3\" range version), reload 3",
+    "rof": 1,
+    "shots": 0
+  },
+  "blunderbuss_mid": {
+    "damage": "2d6!",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "2",
+    "notes": "treated as a shotgun (2\" range version), reload 3",
+    "rof": 1,
+    "shots": 0
+  },
+  "blunderbuss close": {
+    "damage": "3d6!",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "1",
+    "notes": "treated as a shotgun (1\" range version), reload 3",
+    "rof": 1,
+    "shots": 0
+  },
+  "kentucky_rifle": {
+    "damage": "2d8!",
+    "ap": 2,
+    "min_str": "d6",
+    "range": "15/30/60",
+    "notes": "reload 4",
+    "rof": 1,
+    "shots": 0
+  },
+  "springfield_model_1861": {
+    "damage": "2d8!",
+    "ap": 0,
+    "min_str": "d6",
+    "range": "15/30/60",
+    "notes": "",
+    "rof": 1,
+    "shots": 0
+  }
 }
