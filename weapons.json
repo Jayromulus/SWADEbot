@@ -901,27 +901,27 @@
     "rof": 3,
     "shots": 30
   },
-  "": {
-    "damage": "",
-    "ap": 0,
-    "min_str": "",
+  "browning_automatic_rifle": {
+    "damage": "2d8!",
+    "ap": 2,
+    "min_str": "d8",
     "blast": "",
     "he_rounds": "",
-    "range": "",
-    "notes": "",
-    "rof": 0,
-    "shots": 0
+    "range": "20/40/80",
+    "notes": ".30-06, rate of fire 1 to 3, uses magazines",
+    "rof": 3,
+    "shots": 20
   },
-  "": {
-    "damage": "",
-    "ap": 0,
-    "min_str": "",
+  "gatling": {
+    "damage": "2d8!",
+    "ap": 2,
+    "min_str": "NA",
     "blast": "",
     "he_rounds": "",
-    "range": "",
-    "notes": "",
-    "rof": 0,
-    "shots": 0
+    "range": "24/48/96",
+    "notes": ".45",
+    "rof": 3,
+    "shots": 100
   },
   "": {
     "damage": "",
