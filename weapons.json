@@ -1,6 +1,6 @@
 {
   "shortsword": {
-  	"damage": "1d6!,str",
+    "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
     "range": "1",
@@ -447,6 +447,294 @@
     "range": "15/30/60",
     "notes": "",
     "rof": 1,
+    "shots": 0
+  },
+  "derringer": {
+    "damage": "2d4!",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "3/6/12",
+    "notes": ".41, -2 to notice if hidden",
+    "rof": 1,
+    "shots": 2
+  },
+  "police_revolver": {
+    "damage": "2d6",
+    "ap": 0,
+    "min_str": "d4",
+    "range": "10/20/40",
+    "notes": ".38",
+    "rof": 1,
+    "shots": 6
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
+    "shots": 0
+  },
+  "": {
+    "damage": "",
+    "ap": 0,
+    "min_str": "",
+    "range": "",
+    "notes": "",
+    "rof": 0,
     "shots": 0
   }
 }
