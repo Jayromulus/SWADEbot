@@ -1,5 +1,6 @@
 {
   "shortsword": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
@@ -11,6 +12,7 @@
     "shots": 0
   },
   "longsword": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d8!,str",
     "ap": 0,
     "min_str": "d8",
@@ -22,6 +24,7 @@
     "shots": 0
   },
   "greatsword": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d10!,str",
     "ap": 0,
     "min_str": "d10",
@@ -33,6 +36,7 @@
     "shots": 0
   },
   "hand_axe": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
@@ -44,6 +48,7 @@
     "shots": 0
   },
   "battleaxe": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d8!,str",
     "ap": 0,
     "min_str": "d8",
@@ -55,6 +60,7 @@
     "shots": 0
   },
   "greataxe": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d10!,str",
     "ap": 2,
     "min_str": "d10",
@@ -66,6 +72,7 @@
     "shots": 0
   },
   "light_club": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
@@ -77,6 +84,7 @@
     "shots": 0
   },
   "heavy_club": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
@@ -88,6 +96,7 @@
     "shots": 0
   },
   "dagger": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
@@ -99,6 +108,7 @@
     "shots": 0
   },
   "knife": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
@@ -110,6 +120,7 @@
     "shots": 0
   },
   "flail": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
@@ -121,6 +132,7 @@
     "shots": 0
   },
   "halberd": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d8!,str",
     "ap": 0,
     "min_str": "d8",
@@ -132,6 +144,7 @@
     "shots": 0
   },
   "katana": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!+1,str",
     "ap": 0,
     "min_str": "d6",
@@ -143,6 +156,7 @@
     "shots": 0
   },
   "lance": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d8!,str",
     "ap": 0,
     "min_str": "d8",
@@ -154,6 +168,7 @@
     "shots": 0
   },
   "mace": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
@@ -165,6 +180,7 @@
     "shots": 0
   },
   "maul": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": " 1d10!,str",
     "ap": 0,
     "min_str": "d10",
@@ -176,6 +192,7 @@
     "shots": 0
   },
   "pike": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d8!,str",
     "ap": 0,
     "min_str": "d8",
@@ -187,6 +204,7 @@
     "shots": 0
   },
   "rapier": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
@@ -198,6 +216,7 @@
     "shots": 0
   },
   "spear": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
@@ -209,6 +228,7 @@
     "shots": 0
   },
   "staff": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
@@ -220,6 +240,7 @@
     "shots": 0
   },
   "warhammer": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 1,
     "min_str": "d6",
@@ -231,6 +252,7 @@
     "shots": 0
   },
   "bangstick": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d6",
@@ -242,6 +264,7 @@
     "shots": 0
   },
   "bayonet": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
@@ -253,6 +276,7 @@
     "shots": 0
   },
   "bayonet_on_rifle": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d4",
@@ -264,6 +288,7 @@
     "shots": 0
   },
   "billy_club": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
@@ -275,6 +300,7 @@
     "shots": 0
   },
   "baton": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
@@ -286,6 +312,7 @@
     "shots": 0
   },
   "brass_knuckles": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
@@ -297,6 +324,7 @@
     "shots": 0
   },
   "chainsaw": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!+4",
     "ap": 0,
     "min_str": "d4",
@@ -308,6 +336,7 @@
     "shots": 0
   },
   "switchblade": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
@@ -319,6 +348,7 @@
     "shots": 0
   },
   "survival_knife": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
@@ -330,6 +360,7 @@
     "shots": 0
   },
   "molecular_knife": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!+2,str",
     "ap": 2,
     "min_str": "d4",
@@ -341,6 +372,7 @@
     "shots": 0
   },
   "molecular_sword": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d8!+2,str",
     "ap": 4,
     "min_str": "d6",
@@ -352,6 +384,7 @@
     "shots": 0
   },
   "laser_sword": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!+8,str",
     "ap": 12,
     "min_str": "d4",
@@ -363,6 +396,7 @@
     "shots": 0
   },
   "throwing_axe": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
@@ -374,6 +408,7 @@
     "shots": 0
   },
   "bow": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!",
     "ap": 0,
     "min_str": "d6",
@@ -385,6 +420,7 @@
     "shots": 0
   },
   "hand_drawn_crossbow": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!",
     "ap": 2,
     "min_str": "d6",
@@ -396,6 +432,7 @@
     "shots": 0
   },
   "heavy_crossbow": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
@@ -407,6 +444,7 @@
     "shots": 0
   },
   "longbow": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!",
     "ap": 1,
     "min_str": "d8",
@@ -418,6 +456,7 @@
     "shots": 0
   },
   "weighted_net": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "0d0",
     "ap": 0,
     "min_str": "d4",
@@ -429,6 +468,7 @@
     "shots": 0
   },
   "sling": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
@@ -440,6 +480,7 @@
     "shots": 0
   },
   "javelin": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
@@ -451,6 +492,7 @@
     "shots": 0
   },
   "compound_bow": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 1,
     "min_str": "d6",
@@ -462,6 +504,7 @@
     "shots": 0
   },
   "crossbow": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!",
     "ap": 2,
     "min_str": "d6",
@@ -473,6 +516,7 @@
     "shots": 0
   },
   "flintlock_pistol": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!+1",
     "ap": 0,
     "min_str": "d4",
@@ -484,6 +528,7 @@
     "shots": 0
   },
   "musket": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!",
     "ap": 0,
     "min_str": "d6",
@@ -495,6 +540,7 @@
     "shots": 0
   },
   "blunderbuss_far": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!",
     "ap": 0,
     "min_str": "d6",
@@ -506,6 +552,7 @@
     "shots": 0
   },
   "blunderbuss_mid": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!",
     "ap": 0,
     "min_str": "d6",
@@ -517,6 +564,7 @@
     "shots": 0
   },
   "blunderbuss_close": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d6",
@@ -528,6 +576,7 @@
     "shots": 0
   },
   "kentucky_rifle": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
@@ -539,6 +588,7 @@
     "shots": 0
   },
   "springfield_model_1861": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!",
     "ap": 0,
     "min_str": "d6",
@@ -550,6 +600,7 @@
     "shots": 0
   },
   "derringer": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d4!",
     "ap": 0,
     "min_str": "d4",
@@ -561,6 +612,7 @@
     "shots": 2
   },
   "police_revolver": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6",
     "ap": 0,
     "min_str": "d4",
@@ -572,6 +624,7 @@
     "shots": 6
   },
   "colt_peacemaker": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!+1",
     "ap": 1,
     "min_str": "d4",
@@ -583,6 +636,7 @@
     "shots": 6
   },
   "smith_and_wesson": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!+1",
     "ap": 1,
     "min_str": "d4",
@@ -594,6 +648,7 @@
     "shots": 6
   },
   "colt_1911": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!+1",
     "ap": 1,
     "min_str": "d4",
@@ -605,6 +660,7 @@
     "shots": 7
   },
   "desert_eagle": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
@@ -616,6 +672,7 @@
     "shots": 7
   },
   "glock": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!",
     "ap": 1,
     "min_str": "d4",
@@ -627,6 +684,7 @@
     "shots": 17
   },
   "ruger": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d4!",
     "ap": 0,
     "min_str": "d4",
@@ -638,6 +696,7 @@
     "shots": 9
   },
   "hk_mp5": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!",
     "ap": 1,
     "min_str": "d6",
@@ -649,6 +708,7 @@
     "shots": 30
   },
   "tommy_gun": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!+1",
     "ap": 1,
     "min_str": "d6",
@@ -660,6 +720,7 @@
     "shots": 20
   },
   "uzi": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!",
     "ap": 1,
     "min_str": "d4",
@@ -671,6 +732,7 @@
     "shots": 32
   },
   "double_barrel_far": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!",
     "ap": 0,
     "min_str": "d6",
@@ -682,6 +744,7 @@
     "shots": 2
   },
   "double_barrel_mid": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!",
     "ap": 0,
     "min_str": "d6",
@@ -693,6 +756,7 @@
     "shots": 2
   },
   "double_barrel_close": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d6",
@@ -704,6 +768,7 @@
     "shots": 2
   },
   "pump_action_far": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!",
     "ap": 0,
     "min_str": "d4",
@@ -715,6 +780,7 @@
     "shots": 6
   },
   "pump_action_mid": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!",
     "ap": 0,
     "min_str": "d4",
@@ -726,6 +792,7 @@
     "shots": 6
   },
   "pump_action_close": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d4",
@@ -737,6 +804,7 @@
     "shots": 6
   },
   "sawed_off_db_far": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!",
     "ap": 0,
     "min_str": "d4",
@@ -748,6 +816,7 @@
     "shots": 2
   },
   "sawed_off_db_mid": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!",
     "ap": 0,
     "min_str": "d4",
@@ -759,6 +828,7 @@
     "shots": 2
   },
   "sawed_off_db_close": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d4",
@@ -770,6 +840,7 @@
     "shots": 0
   },
   "streetsweeper_far": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!",
     "ap": 0,
     "min_str": "d6",
@@ -781,6 +852,7 @@
     "shots": 12
   },
   "streetsweeper_mid": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!",
     "ap": 0,
     "min_str": "d6",
@@ -792,6 +864,7 @@
     "shots": 12
   },
   "streetsweeper_close": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d6",
@@ -803,6 +876,7 @@
     "shots": 0
   },
   "barrett": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d10!",
     "ap": 4,
     "min_str": "d8",
@@ -814,6 +888,7 @@
     "shots": 10
   },
   "m1_garand": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
@@ -825,6 +900,7 @@
     "shots": 8
   },
   "hunting_rifle": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
@@ -836,6 +912,7 @@
     "shots": 5
   },
   "sharps_big_50": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d10!",
     "ap": 2,
     "min_str": "d8",
@@ -847,6 +924,7 @@
     "shots": 1
   },
   "spencer_carbine": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
@@ -858,6 +936,7 @@
     "shots": 7
   },
   "winchester'73": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!-1",
     "ap": 2,
     "min_str": "d6",
@@ -869,6 +948,7 @@
     "shots": 15
   },
   "ak47": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8+1",
     "ap": 2,
     "min_str": "",
@@ -880,6 +960,7 @@
     "shots": 30
   },
   "m_16": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
@@ -891,6 +972,7 @@
     "shots": 20
   },
   "steyr_aug": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
@@ -902,6 +984,7 @@
     "shots": 30
   },
   "browning_automatic_rifle": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d8",
@@ -913,6 +996,7 @@
     "shots": 20
   },
   "gatling": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "NA",
@@ -923,70 +1007,28 @@
     "rof": 3,
     "shots": 100
   },
-  "": {
-    "damage": "",
-    "ap": 0,
-    "min_str": "",
+  "minigun": {
+    "source": "SWADE Player Handbook pg.72",
+    "damage": "2d8!+1",
+    "ap": 2,
+    "min_str": "d10",
     "blast": "",
     "he_rounds": "",
-    "range": "",
-    "notes": "",
-    "rof": 0,
-    "shots": 0
+    "range": "30/60/120",
+    "notes": "mininmum rof 3, requires back harness with ammo which weighs an additional 85 pounds fully loaded",
+    "rof": 5,
+    "shots": 4000
   },
-  "": {
+  "m2_browning": {
+    "source": "SWADE Player Handbook pg.72",
     "damage": "",
-    "ap": 0,
-    "min_str": "",
+    "ap": 4,
+    "min_str": "NA",
     "blast": "",
     "he_rounds": "",
     "range": "",
     "notes": "",
-    "rof": 0,
-    "shots": 0
-  },
-  "": {
-    "damage": "",
-    "ap": 0,
-    "min_str": "",
-    "blast": "",
-    "he_rounds": "",
-    "range": "",
-    "notes": "",
-    "rof": 0,
-    "shots": 0
-  },
-  "": {
-    "damage": "",
-    "ap": 0,
-    "min_str": "",
-    "blast": "",
-    "he_rounds": "",
-    "range": "",
-    "notes": "",
-    "rof": 0,
-    "shots": 0
-  },
-  "": {
-    "damage": "",
-    "ap": 0,
-    "min_str": "",
-    "blast": "",
-    "he_rounds": "",
-    "range": "",
-    "notes": "",
-    "rof": 0,
-    "shots": 0
-  },
-  "": {
-    "damage": "",
-    "ap": 0,
-    "min_str": "",
-    "blast": "",
-    "he_rounds": "",
-    "range": "",
-    "notes": "",
-    "rof": 0,
-    "shots": 0
+    "rof": 3,
+    "shots": 200
   }
 }
