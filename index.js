@@ -121,7 +121,7 @@ client.on('messageCreate', async (message) => {
           args.splice(1, 0, str);
         }
       }
-      let exp = /[0-9]d[0-9]+/;
+      let exp = /\d+d\d+!?/;
       let malformed = args.some(e => !exp.test(e));
       if (malformed) {
         message.channel.send('Missing Strength Parameter');
@@ -151,10 +151,12 @@ client.on('messageCreate', async (message) => {
           }
         })
         let msg = `total: ${rolls.reduce((a, b) => a + b.reduce((c, d) => parseInt(c) + parseInt(d), 0), 0)}`;
+        let weaponTest = /\d+d\d+!?/;
+        let weaponRoll = !weaponTest.test(origin_args[0]);
+        let isWeapon = !weaponTest.test(origin_args[1]);
+        // console.log(args[0], weaponRoll)
         args.map((a, i) => {
-          let weaponTest = /\D/;
-          let weaponRoll = weaponTest.test(origin_args[0]);
-          let display = `\n${weaponRoll && i === 0 ? origin_args[1] : weapons[origin_args[1]].damage.includes('str') && i === 1 ? 'strength' : a}: `;
+          let display = `\n${weaponRoll && i === 0 ? origin_args[1] : isWeapon && weapons[origin_args[1]].damage.includes('str') && i === 1 ? 'strength' : a}: `;
           for (let n = 0; n < a.split(/\D/)[0]; n++) {
             let temp = rolls.shift();
             display += temp.join(', ');
