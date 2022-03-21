@@ -4,7 +4,13 @@ const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"], partials: ['MESSAGE', 'REACTION', 'CHANNEL'] });
 const e = require('express');
 const weapons = require('./weapons.json');
+// the number of items shown in the weapons list embed
 const w_embed_length = 18;
+// create the regex pattern to recognize a die roll
+const weaponPattern = /\d+d\d+!?/;
+// get a list of all weapon names from the json
+let weaponsList = [];
+weaponsList.push(...Object.keys(weapons).sort().filter(e => e.name !== ''));
 
 // login to the client
 client.on('ready', () => {
@@ -166,48 +172,70 @@ client.on('messageCreate', async (message) => {
           args.splice(1, 0, str);
         }
       }
-      let exp = /\d+d\d+!?/;
-      let malformed = args.some(e => !exp.test(e));
+      // check if there is anything in the args that does not match the regex pattern
+      let malformed = args.some(e => !weaponPattern.test(e));
+      // if the args contain something that is malformed, send a message informing the user
       if (malformed) {
         message.channel.send('Invalid command syntax');
       } else {
+        // begin rolling each set of dice in the args
         args.forEach(roll => {
+          // grab just the bonus from the end of any dice roll
           let rollMod = roll.trim().split('+');
           let bonus = parseInt(rollMod[1]);
+          // get the number of and base of the die being rolled
           let numBase = rollMod[0].split('d');
+          // if the dice explode
           if (rollMod[0][rollMod[0].length - 1] === '!') {
+            // track the current roll index
             let currentRoll = 0;
+            // for as long as the current die index being rolled is lower than the number of dice being rolled
             while (currentRoll < numBase[0]) {
+              // box to hold the values of the current dice and result from each roll
               let result;
               let currentDice = [];
+              // roll the die of size provided by the args
               result = rollDice(parseInt(numBase[1]));
+              // add the result into the roll list
               currentDice.push(result);
+              // if the result is the same as the size of the die being rolled (meaning it is a max roll)
               while (result === parseInt(numBase[1])) {
+                // reset result's value to a new roll and add it to the array of the current roll
                 result = rollDice(parseInt(numBase[1]));
                 currentDice.push(result);
               }
+              // add the current dice to the rolls and iterate the current index
               rolls.push(currentDice);
               currentRoll++;
             }
+          // if the dice do not explode
           } else {
+            // roll as many dice as are provided in the args of a given size and add the results to the rolls
             for (let n = 0; n < numBase[0]; n++) {
               rolls.push([rollDice(parseInt(numBase[1]), bonus)]);
             }
           }
-        })
+        });
+        // create the base of the message which includes the total of all rolls, we will add each individual roll onto this later
         let msg = `total: ${rolls.reduce((a, b) => a + b.reduce((c, d) => parseInt(c) + parseInt(d), 0), 0)}`;
-        let weaponTest = /\d+d\d+!?/;
-        let weaponRoll = !weaponTest.test(origin_args[0]);
-        let isWeapon = !weaponTest.test(origin_args[1]);
+        // check if the user rolled for a weapon, instead of just rolling dice first
+        let weaponRoll = !weaponPattern.test(origin_args[1]);
+        // run through the list of roll results
         args.map((a, i) => {
-          let display = `\n${weaponRoll && i === 0 ? origin_args[1] : isWeapon && weapons[origin_args[1]].damage.includes('str') && i === 1 ? 'strength' : a}: `;
+          // the base display will show either the weapon name, if there is was one provided, the strength label if that is part of the weapon damage, or the dice rolled
+          let display = `\n${weaponRoll && i === 0 ? origin_args[1] : weaponRoll && weapons[origin_args[1]].damage.includes('str') && i === 1 ? 'strength' : a}: `;
+          //  grab each individual array from the roll results, then combines them and seperates each seperate seperate die result for clarity
           for (let n = 0; n < a.split(/\D/)[0]; n++) {
             let temp = rolls.shift();
+            // join each explosion with a comma
             display += temp.join(', ');
+            // if n is lower than the number of dice in the roll, seperate each roll with a |
             if (n < a.split(/\D/)[0] - 1) display += ' | ';
           }
+          // add the display for that die onto the message that will be sent
           msg += display;
         });
+        // if the message is over the discord message length limit, just send the total without the individual dice, otherwise send the whole message
         if (msg.length > 4000) {
           message.channel.send(`total: ${rolls.reduce((a, b) => a + b.reduce((c, d) => parseInt(c) + parseInt(d), 0), 0)}`);
         } else {
@@ -221,18 +249,20 @@ client.on('messageCreate', async (message) => {
   }
 });
 
+// function to roll dice using the base size as the limit then adding the bonus if any is provided
 function rollDice(base, bonus) {
   let rand = Math.floor(Math.random() * base + 1) + (bonus ? bonus : 0);
   return rand;
 }
 
+// create the weapon embed using the starting index, while also taking in the total number and current pages as parameters for the footer
 function weaponsEmbed(start, pages, currentPage) {
-  let weaponsList = [];
-  weaponsList.push(...Object.keys(weapons).sort().filter(e => e.name !== ''));
-
+  // create the list of embed fields and the limit of how many fields to create according to the starting index and length of the embed
   let list = [];
   let limit = (start + w_embed_length <= weaponsList.length) ? start + w_embed_length : weaponsList.length;
 
+  // starting at a certain index, go through the json and create a new field object until you hit the limit
+  // THIS MIGHT BE A PLACE TO IMPROVE PERFORMANCE INSTEAD OF REFERENCING THE JSON EACH TIME POSSIBLY MAKING IT A GLOBAL (?)
   for (let i = start; i < limit; i++) {
     list.push({
       name: weaponsList[i].split('_').join(' '),
@@ -241,6 +271,7 @@ function weaponsEmbed(start, pages, currentPage) {
     })
   }
 
+  // create the discord embed with the fields from above in order to return
   let embed = new Discord.MessageEmbed()
     .setColor('#6C7079')
     .setTitle('Weapon Parameters')
@@ -250,4 +281,5 @@ function weaponsEmbed(start, pages, currentPage) {
   return embed;
 }
 
+// login as and run the bot
 client.login(process.env.TOKEN);
