@@ -36,7 +36,7 @@ client.on('messageCreate', async (message) => {
     // ?help
     case 'help':
       // send a message detailing how to use the bot to the user
-      message.channel.send('***SWADEbot is a dice roller app that helps you roll multiple dice, be they exploding or nay!***\n*NOTE: Anything inside of < > means it can be replaced with anything matching that pattern, e.g. `<#d#>` can be replaced with `1d6`. Anything with a `?` in front of it is an optional input*\n\n**ROLLING DICE**\nIn order to roll dice, all you have to do it type the command `?roll` followed by the number and type of dice you would like to roll.\n\n**EXAMPLE 1:**\n`?roll 1d6`\ngives you a number result of rolling one six-sided die\n*notation:* `?roll <#d#>`\n\n**EXAMPLE 2:**\n`?roll 1d8+2`\ngives you the combined result of an 8 sided die with the bonus of 2\n*notation:* `?roll <#d#+#>`\n\n**EXAMPLE 3:**\n`?roll 1d6 1d4`\nrolls 1d6 and 1d4 giving you both results as well as the total\n*notation:* `?roll <#d#> ?<#d#> ... ?<#d#+#>`\n\n**EXAMPLE 4:**\n`?roll shortsword 1d8!`\nrolls damage for a shortsword (1d6 + str) using 1d8 (exploding) as the strength score\n*notation:* `?roll <weapon> <strength> ?<extra dice>`\n\n**WEAPON LIST**\nto see a list of weapons, simply use the command\n`?weapons`\n\n**HELP**\nto see a list of commands, use the command\n`?help`\n*yes SWADEbot can see the irony in needing to use a command to see the list of commands*');
+      message.channel.send('***SWADEbot is a dice roller app that helps you roll multiple dice, be they exploding or nay!***\n*NOTE: Anything inside of < > means it can be replaced with anything matching that pattern, e.g. `<#d#>` can be replaced with `1d6`. Anything with a `?` in front of it is an optional input*\n\n**ROLLING DICE**\nIn order to roll dice, all you have to do it type the command `?roll` followed by the number and type of dice you would like to roll.\n\n**EXAMPLE 1:**\n`?roll 1d6`\ngives you a number result of rolling one six-sided die\n*notation:* `?roll <#d#>`\n\n**EXAMPLE 2:**\n`?roll 1d8+2`\ngives you the combined result of an 8 sided die with the bonus of 2\n*notation:* `?roll <#d#+#>`\n\n**EXAMPLE 3:**\n`?roll 1d6 1d4`\nrolls 1d6 and 1d4 giving you both results as well as the total\n*notation:* `?roll <#d#> ?<#d#> ... ?<#d#+#>`\n\n**EXAMPLE 4:**\n`?roll shortsword 1d8!`\nrolls damage for a shortsword (1d6 + str) using 1d8 (exploding) as the strength score\n*notation:* `?roll <weapon> <strength> ?<extra dice>`\n\n**WEAPON LIST**\nto see a list of weapons, simply use the command\n`?weapons`\nthe weapons will show up in an embed with the name of a weapon listed above, the parameter taken by the bot will be listed below\ntherefore if the embed says\n\t\t**Billy Club**\n\t\t`billy_club`\nthe user must type `?roll billy_club <str>` in order to roll billy club damage\n\n**HELP**\nto see a list of commands, use the command\n`?help`\n*yes SWADEbot can see the irony in needing to use a command to see the list of commands*');
       break;
     // ?weapons
     case 'weapons':
@@ -52,8 +52,8 @@ client.on('messageCreate', async (message) => {
             // check to make sure that each current value is not either empty or the hnumber 0, as well as not showing the source (this will be in the footer)
             if (current[c] !== '' && current[c] !== 0 && c !== 'source') {
               return {
-                name: c.split('_').join(' '),
-                value: current[c].toString(),
+                name: c.split('_').join(' ').toUpperCase(),
+                value: current[c] === -1 ? 'Special' : current[c].toString(),
                 inline: true
               }
             }
@@ -265,8 +265,8 @@ function weaponsEmbed(start, pages, currentPage) {
   // THIS MIGHT BE A PLACE TO IMPROVE PERFORMANCE INSTEAD OF REFERENCING THE JSON EACH TIME POSSIBLY MAKING IT A GLOBAL (?)
   for (let i = start; i < limit; i++) {
     list.push({
-      name: weaponsList[i].split('_').join(' '),
-      value: weapons[weaponsList[i]].source,
+      name: weapons[weaponsList[i]].name,
+      value: '`' + weaponsList[i] + '`',
       inline: true
     })
   }
