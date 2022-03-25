@@ -181,6 +181,7 @@ client.on('messageCreate', async (message) => {
         // begin rolling each set of dice in the args
         args.forEach(roll => {
           // grab just the bonus from the end of any dice roll
+          let operation = roll.includes('+') ? 'add' : roll.includes('-') ? 'sub' : '';
           let rollMod = roll.includes('+') ? roll.trim().split('+') : roll.includes('-') ? roll.trim().split('-') : roll.trim();
           console.log(rollMod);
           let bonus = parseInt(rollMod[1]);
@@ -196,13 +197,13 @@ client.on('messageCreate', async (message) => {
               let result;
               let currentDice = [];
               // roll the die of size provided by the args
-              result = rollDice(parseInt(numBase[1]), bonus);
+              result = rollDice(parseInt(numBase[1]), bonus, operation);
               // add the result into the roll list
               currentDice.push(result);
               // if the result is the same as the size of the die being rolled (meaning it is a max roll)
               while (result === parseInt(numBase[1])) {
                 // reset result's value to a new roll and add it to the array of the current roll
-                result = rollDice(parseInt(numBase[1]), bonus);
+                result = rollDice(parseInt(numBase[1]), bonus, operation);
                 currentDice.push(result);
               }
               // add the current dice to the rolls and iterate the current index
@@ -213,7 +214,7 @@ client.on('messageCreate', async (message) => {
           } else {
             // roll as many dice as are provided in the args of a given size and add the results to the rolls
             for (let n = 0; n < numBase[0]; n++) {
-              rolls.push([rollDice(parseInt(numBase[1]), bonus)]);
+              rolls.push([rollDice(parseInt(numBase[1]), bonus, operation)]);
             }
           }
         });
@@ -251,9 +252,9 @@ client.on('messageCreate', async (message) => {
 });
 
 // function to roll dice using the base size as the limit then adding the bonus if any is provided
-function rollDice(base, bonus) {
+function rollDice(base, bonus, operation) {
   console.log('bonus:', bonus);
-  console.log('base:', base);
+  console.log('base:', base, operation);
   let rand = Math.floor(Math.random() * base + 1) + (bonus ? bonus : 0);
   return rand;
 }
