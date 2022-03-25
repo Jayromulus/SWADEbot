@@ -1259,6 +1259,18 @@
     "rof": -1,
     "shots": 0
   },
+  "trebuchet_hellfrost": {
+    "name": "Trebuchet (Hellfrost)",
+    "source": "Hellfrost Player Handbook pg.43",
+    "damage": "3d8!",
+    "ap": 6,
+    "min_str": "",
+    "blast": "SBT",
+    "range": "24/48/96",
+    "notes": "heavy weapon, 2 actions to reload, crew 4, minimum range of 12\"",
+    "rof": -1,
+    "shots": 0
+  },
   "flamethrower": {
     "name": "Flamethrower",
     "source": "SWADE Player Handbook pg.78",
@@ -1899,11 +1911,23 @@
     "name": "Frame Ram",
     "source": "Hellfrost Player Handbook pg.42",
     "damage": "1d6!,yd",
-    "ap": 0,
+    "ap": 3,
     "min_str": "",
     "blast": "",
     "range": "",
-    "notes": "",
+    "notes": "max length 10 yards",
+    "rof": 0,
+    "shots": 0
+  },
+  "hand_ram": {
+    "name": "Hand Ram",
+    "source": "Hellfrost Player Handbook pg.42",
+    "damage": "1d6!,yd",
+    "ap": 3,
+    "min_str": "",
+    "blast": "",
+    "range": "",
+    "notes": "max length 10 yards",
     "rof": 0,
     "shots": 0
   }
