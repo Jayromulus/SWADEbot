@@ -5,7 +5,7 @@ const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"], parti
 const e = require('express');
 const weapons = require('./weapons.json');
 // the number of items shown in the weapons list embed
-const w_embed_length = 18;
+const w_embed_length = 15;
 // create the regex pattern to recognize a die roll
 const weaponPattern = /\d+d\d+!?/;
 // get a list of all weapon names from the json
@@ -259,16 +259,23 @@ function rollDice(base, bonus) {
 function weaponsEmbed(start, pages, currentPage) {
   // create the list of embed fields and the limit of how many fields to create according to the starting index and length of the embed
   let list = [];
-  let limit = (start + w_embed_length <= weaponsList.length) ? start + w_embed_length : weaponsList.length;
+  let limit = (start + w_embed_length <= weaponsList.length) ? start + w_embed_length : weaponsList.length - 1;
 
   // starting at a certain index, go through the json and create a new field object until you hit the limit
   // THIS MIGHT BE A PLACE TO IMPROVE PERFORMANCE INSTEAD OF REFERENCING THE JSON EACH TIME POSSIBLY MAKING IT A GLOBAL (?)
-  for (let i = start; i < limit; i++) {
+  for (let i = start; i <= limit; i++) {
     list.push({
       name: weapons[weaponsList[i]].name,
       value: '`' + weaponsList[i] + '`',
       inline: true
-    })
+    });
+    if(i !== 0 && ((limit % 2 == 0) ? i % 2 === 0 : i % 2 === 1) && i !== limit - 1) {
+      list.push({
+      	name: '\u200b',
+      	value: '\u200b',
+      	inline: true
+      })
+    };
   }
 
   // create the discord embed with the fields from above in order to return
