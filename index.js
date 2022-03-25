@@ -46,7 +46,7 @@ client.on('messageCreate', async (message) => {
       if (search) {
         // the current weapon will look in the json for the item entered by the user
         let current = weapons[search.toLowerCase()];
-        if(current) {
+        if (current) {
           // map over the keys of the searched weapon and create embed field objects for each of them
           let currentFields = Object.keys(current).map(c => {
             // check to make sure that each current value is not either empty or the hnumber 0, as well as not showing the source (this will be in the footer)
@@ -65,11 +65,11 @@ client.on('messageCreate', async (message) => {
             .setFooter({ text: weapons[search].source })
             .addFields(currentFields.filter(e => e !== undefined));
           message.channel.send({ embeds: [currentEmbed] });
-        // "catch" in case the item is not in the json
+          // "catch" in case the item is not in the json
         } else {
           message.channel.send(`could not find weapon ${search}`);
         }
-      // if there is no search term, this will send out the whole list of items
+        // if there is no search term, this will send out the whole list of items
       } else {
         // create the list of weapons from the list of keys in the weapons.json
         let weaponsList = [];
@@ -141,6 +141,8 @@ client.on('messageCreate', async (message) => {
     case 'roll':
       // create the empty list of all rolls
       let rolls = [];
+      let operationList = [];
+
       // if the first argument of rolls is a weapon in the json
       if (args[0] in weapons) {
         // grab the damage for the weapon from the json while removing it from the args, and split it up if there is a strength section in it
@@ -164,7 +166,7 @@ client.on('messageCreate', async (message) => {
             // remove the original weapon damage since we will need to downscale the die in accordance to the user's strength (CITATION NEEDED)
             let originDamage = args.pop();
             // debugging comparison
-            console.log(weapons[origin_args[1]].min_str.split(/\D/)[1] + '|' + str.split(/\D/)[1]);
+            // console.log(weapons[origin_args[1]].min_str.split(/\D/)[1] + '|' + str.split(/\D/)[1]);
             // add the reduced die to the front of the args array, with it exploding if the original damage was exploding
             args.unshift(weaponDie.split(/\D/)[0] + 'd' + str.split(/\D/)[1] + (originDamage.includes('!') ? '!' : ''));
           }
@@ -182,8 +184,8 @@ client.on('messageCreate', async (message) => {
         args.forEach(roll => {
           // grab just the bonus from the end of any dice roll
           let operation = roll.includes('+') ? 'add' : roll.includes('-') ? 'sub' : '';
-          let rollMod = roll.includes('+') ? roll.trim().split('+') : roll.includes('-') ? roll.trim().split('-') : roll.trim();
-          console.log(rollMod);
+          operationList.push(operation);
+          let rollMod = operation === 'add' ? roll.trim().split('+') : operation === 'sub' ? roll.trim().split('-') : [roll.trim(), ''];
           let bonus = parseInt(rollMod[1]);
           // get the number of and base of the die being rolled
           let numBase = rollMod[0].split('d');
@@ -197,24 +199,32 @@ client.on('messageCreate', async (message) => {
               let result;
               let currentDice = [];
               // roll the die of size provided by the args
-              result = rollDice(parseInt(numBase[1]), bonus, operation);
+              result = rollDice(parseInt(numBase[1]));
               // add the result into the roll list
               currentDice.push(result);
               // if the result is the same as the size of the die being rolled (meaning it is a max roll)
               while (result === parseInt(numBase[1])) {
                 // reset result's value to a new roll and add it to the array of the current roll
-                result = rollDice(parseInt(numBase[1]), bonus, operation);
+                result = rollDice(parseInt(numBase[1]));
                 currentDice.push(result);
+              }
+              if (operation === 'add') {
+                currentDice.push(Math.abs(parseInt(bonus)));
+              } else if (operation === 'sub') {
+                currentDice.push(-Math.abs(parseInt(bonus)));
               }
               // add the current dice to the rolls and iterate the current index
               rolls.push(currentDice);
+              // console.log(currentDice);
               currentRoll++;
             }
-          // if the dice do not explode
+            // if the dice do not explode
           } else {
             // roll as many dice as are provided in the args of a given size and add the results to the rolls
             for (let n = 0; n < numBase[0]; n++) {
-              rolls.push([rollDice(parseInt(numBase[1]), bonus, operation)]);
+              // console.log(numBase)
+              rolls.push([rollDice(parseInt(numBase[1])), (operation === 'add' ? Math.abs(parseInt(bonus)) : operation === 'sub' ? -Math.abs(parseInt(bonus)) : 0)]);
+              console.log(rolls);
             }
           }
         });
@@ -223,12 +233,19 @@ client.on('messageCreate', async (message) => {
         // check if the user rolled for a weapon, instead of just rolling dice first
         let weaponRoll = !weaponPattern.test(origin_args[1]);
         // run through the list of roll results
+        // operationList.shift()
+        operationList.forEach((e, i) => {
+          console.log('roll:', rolls[i])
+          rolls[i].pop();
+        });
         args.map((a, i) => {
+          // console.log(operationList.includes('add') || operationList.includes('sub'), rolls)
           // the base display will show either the weapon name, if there is was one provided, the strength label if that is part of the weapon damage, or the dice rolled
           let display = `\n${weaponRoll && i === 0 ? origin_args[1] : weaponRoll && weapons[origin_args[1]].damage.includes('str') && i === 1 ? 'strength' : a}: `;
           //  grab each individual array from the roll results, then combines them and seperates each seperate seperate die result for clarity
           for (let n = 0; n < a.split(/\D/)[0]; n++) {
             let temp = rolls.shift();
+            // console.log(temp)
             // join each explosion with a comma
             display += temp.join(', ');
             // if n is lower than the number of dice in the roll, seperate each roll with a |
@@ -238,10 +255,16 @@ client.on('messageCreate', async (message) => {
           msg += display;
         });
         // if the message is over the discord message length limit, just send the total without the individual dice, otherwise send the whole message
-        if (msg.length > 4000) {
+        if (msg.length > 1000) {
           message.channel.send(`total: ${rolls.reduce((a, b) => a + b.reduce((c, d) => parseInt(c) + parseInt(d), 0), 0)}`);
+          while (operationList[0]){
+            operationList.shift();
+          }
         } else {
           message.channel.send(msg);
+          while (operationList[0]){
+            operationList.shift();
+          }
         }
       }
       break;
@@ -252,23 +275,8 @@ client.on('messageCreate', async (message) => {
 });
 
 // function to roll dice using the base size as the limit then adding the bonus if any is provided
-function rollDice(base, bonus, operation) {
-  console.log('bonus:', bonus);
-  console.log('base:', base, operation);
-  let rand = Math.floor(Math.random() * base + 1);
-  console.log(rand);
-  if(bonus) {
-    switch(operation){
-      case 'add':
-        rand += bonus;
-        break;
-      case 'sub':
-        rand -= bonus;
-        break;
-      default:
-        rand = rand;
-    }
-  }
+function rollDice(base, bonus) {
+  let rand = Math.floor(Math.random() * base + 1) + (bonus ? bonus : 0);
   return rand;
 }
 
@@ -286,11 +294,11 @@ function weaponsEmbed(start, pages, currentPage) {
       value: '`' + weaponsList[i] + '`',
       inline: true
     });
-    if(i !== 0 && ((limit % 2 == 0) ? i % 2 === 0 : i % 2 === 1) && i !== limit - 1) {
+    if (i !== 0 && ((limit % 2 == 0) ? i % 2 === 0 : i % 2 === 1) && i !== limit - 1) {
       list.push({
-      	name: '\u200b',
-      	value: '\u200b',
-      	inline: true
+        name: '\u200b',
+        value: '\u200b',
+        inline: true
       })
     };
   }
