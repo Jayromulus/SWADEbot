@@ -16,7 +16,7 @@ weaponsList.push(...Object.keys(weapons).sort().filter(e => e.name !== ''));
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}`);
   // register the activity tag of the bot
-  client.user.setActivity('`?help` for command list');
+  client.user.setActivity('?help for command list');
 })
 
 // listen for a message to be sent in the channel, kind of a shotgun approach but it works well
