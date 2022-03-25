@@ -181,7 +181,7 @@ client.on('messageCreate', async (message) => {
         message.channel.send('Invalid command syntax');
       } else {
         // begin rolling each set of dice in the args
-        args.forEach(roll => {
+        args.forEach((roll, index) => {
           // grab just the bonus from the end of any dice roll
           let operation = roll.includes('+') ? 'add' : roll.includes('-') ? 'sub' : '';
           operationList.push(operation);
@@ -208,9 +208,10 @@ client.on('messageCreate', async (message) => {
                 result = rollDice(parseInt(numBase[1]));
                 currentDice.push(result);
               }
-              if (operation === 'add') {
+              console.log(currentRoll)
+              if (operation === 'add' && currentRoll === 0) {
                 currentDice.push(Math.abs(parseInt(bonus)));
-              } else if (operation === 'sub') {
+              } else if (operation === 'sub' && currentRoll === 0) {
                 currentDice.push(-Math.abs(parseInt(bonus)));
               } else {
                 currentDice.push(0);
@@ -224,8 +225,15 @@ client.on('messageCreate', async (message) => {
           } else {
             // roll as many dice as are provided in the args of a given size and add the results to the rolls
             for (let n = 0; n < numBase[0]; n++) {
-              // console.log(numBase)
-              rolls.push([rollDice(parseInt(numBase[1])), (operation === 'add' ? Math.abs(parseInt(bonus)) : operation === 'sub' ? -Math.abs(parseInt(bonus)) : 0)]);
+              console.log(n)
+              let temp = [];
+              temp.push(rollDice(parseInt(numBase[1])));
+              if(n === 0) {
+                temp.push((operation === 'add' ? Math.abs(parseInt(bonus)) : operation === 'sub' ? -Math.abs(parseInt(bonus)) : 0))
+              } else {
+                temp.push(0)
+              }
+              rolls.push(temp);
               console.log(rolls);
             }
           }
