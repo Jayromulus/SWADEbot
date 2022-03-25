@@ -212,6 +212,8 @@ client.on('messageCreate', async (message) => {
                 currentDice.push(Math.abs(parseInt(bonus)));
               } else if (operation === 'sub') {
                 currentDice.push(-Math.abs(parseInt(bonus)));
+              } else {
+                currentDice.push(0);
               }
               // add the current dice to the rolls and iterate the current index
               rolls.push(currentDice);
@@ -234,10 +236,12 @@ client.on('messageCreate', async (message) => {
         let weaponRoll = !weaponPattern.test(origin_args[1]);
         // run through the list of roll results
         // operationList.shift()
-        operationList.forEach((e, i) => {
-          console.log('roll:', rolls[i])
-          rolls[i].pop();
-        });
+        // operationList.forEach((e, i) => {
+        //   console.log('roll:', rolls[i])
+        //   rolls[i].pop();
+        // });
+        rolls.forEach(r => r.pop());
+        // console.log('rolls:', rolls);
         args.map((a, i) => {
           // console.log(operationList.includes('add') || operationList.includes('sub'), rolls)
           // the base display will show either the weapon name, if there is was one provided, the strength label if that is part of the weapon damage, or the dice rolled
