@@ -181,7 +181,8 @@ client.on('messageCreate', async (message) => {
         // begin rolling each set of dice in the args
         args.forEach(roll => {
           // grab just the bonus from the end of any dice roll
-          let rollMod = roll.trim().split('+');
+          let rollMod = roll.includes('+') ? roll.trim().split('+') : roll.includes('-') ? roll.trim().split('-') : roll.trim();
+          console.log(rollMod);
           let bonus = parseInt(rollMod[1]);
           // get the number of and base of the die being rolled
           let numBase = rollMod[0].split('d');
