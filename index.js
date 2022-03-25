@@ -251,6 +251,7 @@ client.on('messageCreate', async (message) => {
 
 // function to roll dice using the base size as the limit then adding the bonus if any is provided
 function rollDice(base, bonus) {
+  console.log(bonus)
   let rand = Math.floor(Math.random() * base + 1) + (bonus ? bonus : 0);
   return rand;
 }
