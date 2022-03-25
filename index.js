@@ -28,7 +28,7 @@ client.on('messageCreate', async (message) => {
   // make a list of the original arguments sent to the bot, since the argument list is modified slightly throughout the process
   const origin_args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
   // the argument list that is used by the bot and modified into the final product used to roll the dice or otherwise search
-  const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
+  const args = message.content.slice(process.env.PREFIX.length).trim().replace(/(\r\n|\n|\r)/gm, " ").split(/ +/g);
   // this will grab the command which is the first arg passed after the prefix
   const command = args.shift().toLowerCase();
   // switch through potential commands
@@ -250,6 +250,7 @@ client.on('messageCreate', async (message) => {
         // });
         rolls.forEach(r => r.pop());
         console.log('rolls:', rolls);
+        console.log('args:', args)
         args.map((a, i) => {
           // console.log(operationList.includes('add') || operationList.includes('sub'), rolls)
           // the base display will show either the weapon name, if there is was one provided, the strength label if that is part of the weapon damage, or the dice rolled
