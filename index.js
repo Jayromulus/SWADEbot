@@ -255,7 +255,19 @@ client.on('messageCreate', async (message) => {
 function rollDice(base, bonus, operation) {
   console.log('bonus:', bonus);
   console.log('base:', base, operation);
-  let rand = Math.floor(Math.random() * base + 1) + (bonus ? bonus : 0);
+  let rand = Math.floor(Math.random() * base + 1);
+  if(bonus) {
+    switch(operation){
+      case 'add':
+        rand += bonus;
+        break;
+      case 'sub':
+        rand -= bonus;
+        break;
+      default:
+        rand = rand;
+    }
+  }
   return rand;
 }
 
