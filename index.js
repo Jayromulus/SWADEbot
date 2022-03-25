@@ -282,6 +282,9 @@ client.on('messageCreate', async (message) => {
       }
       break;
     // add a feature where if there is a typo then it suggests the closest spelled command with the same params?
+    case 'deeznuts':
+      message.channel.send('https://giphy.com/gifs/deez-nuts-his-watermark-because-it-was-idea-my-brother-made-me-make-ESjyqZhDEpCo0');
+      break;
     default:
       console.log('how did you get here?');
   }
