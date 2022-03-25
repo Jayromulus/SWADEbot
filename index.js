@@ -241,7 +241,7 @@ client.on('messageCreate', async (message) => {
         //   rolls[i].pop();
         // });
         rolls.forEach(r => r.pop());
-        // console.log('rolls:', rolls);
+        console.log('rolls:', rolls);
         args.map((a, i) => {
           // console.log(operationList.includes('add') || operationList.includes('sub'), rolls)
           // the base display will show either the weapon name, if there is was one provided, the strength label if that is part of the weapon damage, or the dice rolled
