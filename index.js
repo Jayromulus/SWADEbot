@@ -256,6 +256,7 @@ function rollDice(base, bonus, operation) {
   console.log('bonus:', bonus);
   console.log('base:', base, operation);
   let rand = Math.floor(Math.random() * base + 1);
+  console.log(rand);
   if(bonus) {
     switch(operation){
       case 'add':
