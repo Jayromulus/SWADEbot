@@ -196,13 +196,13 @@ client.on('messageCreate', async (message) => {
               let result;
               let currentDice = [];
               // roll the die of size provided by the args
-              result = rollDice(parseInt(numBase[1]));
+              result = rollDice(parseInt(numBase[1]), bonus);
               // add the result into the roll list
               currentDice.push(result);
               // if the result is the same as the size of the die being rolled (meaning it is a max roll)
               while (result === parseInt(numBase[1])) {
                 // reset result's value to a new roll and add it to the array of the current roll
-                result = rollDice(parseInt(numBase[1]));
+                result = rollDice(parseInt(numBase[1]), bonus);
                 currentDice.push(result);
               }
               // add the current dice to the rolls and iterate the current index
