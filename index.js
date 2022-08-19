@@ -285,6 +285,22 @@ client.on('messageCreate', async (message) => {
     case 'deeznuts':
       message.channel.send('https://giphy.com/gifs/deez-nuts-his-watermark-because-it-was-idea-my-brother-made-me-make-ESjyqZhDEpCo0');
       break;
+    // ?ouch  {wounds} {toughness}
+    case 'ouch':
+      // console.log(args[0], args[1]);
+      let potential = args[0] - args[1];
+      let wounds = Math.floor(potential / 4);
+      if(wounds === 0) {
+        message.channel.send('You are shaken');
+      } else {
+        if(wounds > 2)
+          message.channel.send(`YIKES! ${wounds} wounds`)
+        else if(wounds === 1)
+          message.channel.send(`${wounds} wound`)
+        else
+          message.channel.send(`${wounds} wounds`)
+      }
+      break;
     default:
       console.log('how did you get here?');
   }
