@@ -293,7 +293,7 @@ client.on('messageCreate', async (message) => {
       if(wounds === 0) {
         message.channel.send('You are shaken');
       } else {
-        if(wounds > 2)
+        if(wounds > 4)
           message.channel.send(`YIKES! ${wounds} wounds`)
         else if(wounds === 1)
           message.channel.send(`${wounds} wound`)
