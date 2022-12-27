@@ -45,8 +45,8 @@ client.on('messageCreate', async (message) => {
     weapons: '',
     roll: '',
     ouch: 'If you would like to calculate damage you take you can use the **ouch** command\n`?ouch <d> <t>`\n<d> is the amount of damage you are recieving\n<t> is your toughness\n\nThis command will tell you how many wounds you receive',
-    scroll: '',
-    wand: 'Provides the cost of a **wand** being created\n`?wand <rank> <points> <charges>`\n<rank> is the rank of the spell being put in the wand\n<points> is how much that spell costs to cast\n<charges> is how many charges the wand will have for use',
+    scroll: 'Provides the price of a scroll\n`?scroll <rank> <points>`\n<rank> is the rank of the spell, only the first letter of a rank is required, though you may type the whole word\n<points> is the power point cost of the spell being put in the scroll',
+    wand: 'Provides the cost of a **wand** being created\n`?wand <rank> <points> <charges>`\n<rank> is the rank of the spell being put in the wand, only the first letter of a rank is required, though you may type the whole word\n<points> is how much that spell costs to cast\n<charges> is how many charges the wand will have for use',
     deeznuts: '',
     help: '',
     other: '',
@@ -334,27 +334,26 @@ client.on('messageCreate', async (message) => {
       rank = args[0].toLowerCase()[0];
       points = args[1];
 
-      console.log(args[0]);
-      console.log(lib[rank], points);
-
-      if(!rank || !points) {
+      let scroll_cost = (lib[rank] * points * 50).toString();
+      if(scroll_cost = 'NaN') {
         message.channel.send('https://tenor.com/view/youre-your-gif-22328611');
         break;
       }
       
-      message.channel.send((lib[rank] * points * 50).toString());
+      message.channel.send(scroll_cost);
       break;
     case 'wand':
       rank = args[0].toLowerCase()[0];
       points = args[1];
       charges = args[2];
 
-      if(!rank || !points) {
+      let wand_cost = (lib[rank] * points * charges * 50).toString();
+      if(wand_cost = 'NaN') {
         message.channel.send('https://tenor.com/view/youre-your-gif-22328611');
         break;
       }
       
-      message.channel.send((lib[rank] * points * charges * 50).toString());
+      message.channel.send(wand_cost);
       break;
     default:
       message.channel.send('https://tenor.com/view/youre-your-gif-22328611');
