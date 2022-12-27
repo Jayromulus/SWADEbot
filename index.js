@@ -40,7 +40,7 @@ client.on('messageCreate', async (message) => {
     'l': 5,
   };
   let rank,points,charges;
-  let link;
+
   let helpTable = {
     weapons: '',
     roll: '',
@@ -336,8 +336,7 @@ client.on('messageCreate', async (message) => {
 
       let scroll_cost = (lib[rank] * points * 50).toString();
       if(scroll_cost = 'NaN') {
-        link = require('./assets/bonefish.gif');
-        message.channel.send(link);
+        message.channel.send('https://drive.google.com/file/d/1ufegjPKQoJW73AJ6LqRs8rHnxmYuF-JL/view?usp=share_link');
         break;
       }
       
