@@ -335,7 +335,7 @@ client.on('messageCreate', async (message) => {
       points = args[1];
 
       let scroll_cost = (lib[rank] * points * 50).toString();
-      if(scroll_cost = 'NaN') {
+      if(scroll_cost = NaN) {
         message.channel.send(require('./assets/bonefish.gif'));
         break;
       }
