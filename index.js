@@ -336,7 +336,7 @@ client.on('messageCreate', async (message) => {
 
       let scroll_cost = (lib[rank] * points * 50).toString();
       if(scroll_cost = 'NaN') {
-        message.channel.send('https://tenor.com/view/youre-your-gif-22328611');
+        message.channel.send(require('./assets/bonefish.gif'));
         break;
       }
       
