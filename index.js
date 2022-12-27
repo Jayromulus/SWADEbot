@@ -32,11 +32,20 @@ client.on('messageCreate', async (message) => {
   // this will grab the command which is the first arg passed after the prefix
   const command = args.shift().toLowerCase();
   // switch through potential commands
+  const lib = {
+    'n': 1,
+    's': 2,
+    'v': 3,
+    'h': 4,
+    'l': 5,
+  };
+  let rank,points,charges;
+
   switch (command) {
     // ?help
     case 'help':
       // send a message detailing how to use the bot to the user
-      message.channel.send('***SWADEbot is a dice roller app that helps you roll multiple dice, be they exploding or nay!***\n*NOTE: Anything inside of < > means it can be replaced with anything matching that pattern, e.g. `<#d#>` can be replaced with `1d6`. Anything with a `?` in front of it is an optional input*\n\n**ROLLING DICE**\nIn order to roll dice, all you have to do it type the command `?roll` followed by the number and type of dice you would like to roll.\n\n**EXAMPLE 1:**\n`?roll 1d6`\ngives you a number result of rolling one six-sided die\n*notation:* `?roll <#d#>`\n\n**EXAMPLE 2:**\n`?roll 1d8+2`\ngives you the combined result of an 8 sided die with the bonus of 2\n*notation:* `?roll <#d#+#>`\n\n**EXAMPLE 3:**\n`?roll 1d6 1d4`\nrolls 1d6 and 1d4 giving you both results as well as the total\n*notation:* `?roll <#d#> ?<#d#> ... ?<#d#+#>`\n\n**EXAMPLE 4:**\n`?roll shortsword 1d8!`\nrolls damage for a shortsword (1d6 + str) using 1d8 (exploding) as the strength score\n*notation:* `?roll <weapon> <strength> ?<extra dice>`\n\n**WEAPON LIST**\nto see a list of weapons, simply use the command\n`?weapons`\nthe weapons will show up in an embed with the name of a weapon listed above, the parameter taken by the bot will be listed below\ntherefore if the embed says\n\t\t**Billy Club**\n\t\t`billy_club`\nthe user must type `?roll billy_club <str>` in order to roll billy club damage\n\n**OUCH**\nif you would like to calculate damage you can use the ouch command\n`?ouch <d> <t>\n\n**EXAMPLE:**\n`?ouch 26 4`\ntells you how many wounds you take/whether you are shaken taking `<d>`26 damage, with a `<t>` toughness of 4\n\n**HELP**\nto see a list of commands, use the command\n`?help`\n*yes SWADEbot can see the irony in needing to use a command to see the list of commands*');
+      message.channel.send('***SWADEbot is a dice roller app that helps you roll multiple dice, be they exploding or nay!***\n*NOTE: Anything inside of < > means it can be replaced with anything matching that pattern, e.g. `<#d#>` can be replaced with `1d6`. Anything with a `?` in front of it is an optional input*\n\n**ROLLING DICE**\nIn order to roll dice, all you have to do it type the command `?roll` followed by the number and type of dice you would like to roll.\n\n**EXAMPLE 1:**\n`?roll 1d6`\ngives you a number result of rolling one six-sided die\n*notation:* `?roll <#d#>`\n\n**EXAMPLE 2:**\n`?roll 1d8+2`\ngives you the combined result of an 8 sided die with the bonus of 2\n*notation:* `?roll <#d#+#>`\n\n**EXAMPLE 3:**\n`?roll 1d6 1d4`\nrolls 1d6 and 1d4 giving you both results as well as the total\n*notation:* `?roll <#d#> ?<#d#> ... ?<#d#+#>`\n\n**EXAMPLE 4:**\n`?roll shortsword 1d8!`\nrolls damage for a shortsword (1d6 + str) using 1d8 (exploding) as the strength score\n*notation:* `?roll <weapon> <strength> ?<extra dice>`\n\n**WEAPON LIST**\nto see a list of weapons, simply use the command\n`?weapons`\nthe weapons will show up in an embed with the name of a weapon listed above, the parameter taken by the bot will be listed below\ntherefore if the embed says\n\t\t**Billy Club**\n\t\t`billy_club`\nthe user must type `?roll billy_club <str>` in order to roll billy club damage\n\n**OUCH**\nif you would like to calculate damage you can use the ouch command\n`?ouch <d> <t>`\n\n**EXAMPLE:**\n`?ouch 26 4`\ntells you how many wounds you take/whether you are shaken taking `<d>`26 damage, with a `<t>` toughness of 4\n\n**HELP**\nto see a list of commands, use the command\n`?help`\n*yes SWADEbot can see the irony in needing to use a command to see the list of commands*');
       break;
     // ?weapons
     case 'weapons':
@@ -225,7 +234,7 @@ client.on('messageCreate', async (message) => {
           } else {
             // roll as many dice as are provided in the args of a given size and add the results to the rolls
             for (let n = 0; n < numBase[0]; n++) {
-              console.log(n)
+              // console.log(n)
               let temp = [];
               temp.push(rollDice(parseInt(numBase[1])));
               if(n === 0) {
@@ -234,7 +243,7 @@ client.on('messageCreate', async (message) => {
                 temp.push(0)
               }
               rolls.push(temp);
-              console.log(rolls);
+              // console.log(rolls);
             }
           }
         });
@@ -301,8 +310,34 @@ client.on('messageCreate', async (message) => {
           message.channel.send(`${wounds} wounds`)
       }
       break;
+    case 'scroll':
+      rank = args[0].toLowerCase()[0];
+      points = args[1];
+
+      console.log(args[0]);
+      console.log(lib[rank], points);
+
+      if(!rank || !points) {
+        message.channel.send('https://tenor.com/view/youre-your-gif-22328611');
+        break;
+      }
+      
+      message.channel.send((lib[rank] * points * 50).toString());
+      break;
+    case 'wand':
+      rank = args[0].toLowerCase()[0];
+      points = args[1];
+      charges = args[2];
+
+      if(!rank || !points) {
+        message.channel.send('https://tenor.com/view/youre-your-gif-22328611');
+        break;
+      }
+      
+      message.channel.send((lib[rank] * points * charges * 50).toString());
+      break;
     default:
-      console.log('how did you get here?');
+      message.channel.send('https://tenor.com/view/youre-your-gif-22328611');
   }
 });
 
