@@ -335,10 +335,10 @@ client.on('messageCreate', async (message) => {
       points = args[1];
 
       let scroll_cost = (lib[rank] * points * 50).toString();
-      if(scroll_cost = 'NaN') {
-        message.channel.send('https://drive.google.com/file/d/1ufegjPKQoJW73AJ6LqRs8rHnxmYuF-JL/view?usp=share_link');
-        break;
-      }
+      // if(scroll_cost = 'NaN') {
+      //   message.channel.send('https://drive.google.com/file/d/1ufegjPKQoJW73AJ6LqRs8rHnxmYuF-JL/view?usp=share_link');
+      //   break;
+      // }
       
       message.channel.send(scroll_cost);
       break;
