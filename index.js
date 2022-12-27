@@ -334,26 +334,27 @@ client.on('messageCreate', async (message) => {
       rank = args[0].toLowerCase()[0];
       points = args[1];
 
-      let scroll_cost = (lib[rank] * points * 50).toString();
-      // if(scroll_cost = 'NaN') {
-      //   message.channel.send('https://drive.google.com/file/d/1ufegjPKQoJW73AJ6LqRs8rHnxmYuF-JL/view?usp=share_link');
-      //   break;
-      // }
+      console.log(args[0]);
+      console.log(lib[rank], points);
+
+      if(!rank || !points) {
+        message.channel.send('https://tenor.com/view/youre-your-gif-22328611');
+        break;
+      }
       
-      message.channel.send(scroll_cost);
+      message.channel.send((lib[rank] * points * 50).toString());
       break;
     case 'wand':
       rank = args[0].toLowerCase()[0];
       points = args[1];
       charges = args[2];
 
-      let wand_cost = (lib[rank] * points * charges * 50).toString();
-      if(wand_cost = 'NaN') {
+      if(!rank || !points) {
         message.channel.send('https://tenor.com/view/youre-your-gif-22328611');
         break;
       }
       
-      message.channel.send(wand_cost);
+      message.channel.send((lib[rank] * points * charges * 50).toString());
       break;
     default:
       message.channel.send('https://tenor.com/view/youre-your-gif-22328611');
