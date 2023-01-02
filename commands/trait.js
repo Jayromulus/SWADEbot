@@ -2,6 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 
 const rollDice = (base, bonus = 0) => {
   let rand = Math.floor(Math.random() * base + 1) + bonus;
+  // console.log('rand', rand);
   return rand;
 };
 
@@ -19,40 +20,28 @@ const explode = async (number, sides, bonus) => {
     // console.log('result:', result)
     // add the result into the roll list
     currentDice.push(result);
+    // console.log('result:', result == sides);
     // if the result is the same as the size of the die being rolled (meaning it is a max roll)
-    while (result === sides) {
+    while (result == sides) {
       // reset result's value to a new roll and add it to the array of the current roll
       result = rollDice(sides);
       currentDice.push(result);
     }
-    rolls.push(currentDice);
+    rolls.push(...currentDice);
     currentRoll++;
   }
   if(bonus) rolls.push(bonus);
-  return rolls.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  let total = rolls.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  let low = Math.min(rolls);
+  let length = rolls.length
+  return { total, low, length };
 };
 
-const standard = async (number, sides, bonus) => {
-  let rolls = [];
-  for (let n = 0; n < number; n++) {
-    let indiv = [];
-    indiv.push(rollDice(sides));
-    if(bonus) rolls.push(bonus);
-    rolls.push(indiv);
-  }
-  return rolls.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-};
-
-const generate = (number, sides, type, bonus) => {
+const generate = (number, sides, bonus) => {
   return new Promise(async (res, rej) => {
     try {
-      if(type === 'explode') {
-        let result = await explode(number, sides, bonus);
-        res(result);
-      } else {
-        let result = await standard(number, sides, bonus);
-        res(result);
-      }
+      let result = await explode(number, sides, bonus);
+      res(result);
     } catch(e) {
       rej(e)
     }
@@ -61,38 +50,37 @@ const generate = (number, sides, type, bonus) => {
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('roll')
+		.setName('trait')
 		.setDescription('Rolls an exploding trait roll using provided options')
     .addStringOption(option =>
       option
-        .setName('set_1')
-        .setDescription('dice to roll #d#(+/-#)')
+        .setName('trait')
+        .setDescription('size of your trait (no spaces between modifier)')
         .setRequired(true))
-    .addStringOption(option =>
+    .addNumberOption(option =>
       option
-        .setName('set_2')
-        .setDescription('dice to roll #d#(+/-#)')),
+        .setName('wild')
+        .setDescription('size of modified wild die (optional)')),
 	async execute(interaction) {
     if (!interaction.isChatInputCommand()) return;
 
     let pattern = /^\+?(0|[1-9]\d*)d\+?(0|[1-9]\d*)(\+|\-[1-9]\d*)?$/;
 
-    let requiredInput = interaction.options._hoistedOptions[0].value.trim()
-    let optionalInput1 = interaction.options._hoistedOptions[1] ? interaction.options._hoistedOptions[1].value.trim() : null;
+    let inputTrait = interaction.options._hoistedOptions[0].value.trim()
+    let inputWild = interaction.options._hoistedOptions[1] ? parseInt(interaction.options._hoistedOptions[1].value.toString().trim()) : 6;
 
     if(!pattern.test(inputTrait)) {
-      await interaction.reply('Invalid Input');
+      await interaction.reply('Invalid Trait Die');
       return;
     };
 
-    let diced = requiredInput.split('d');
+    let diced = inputTrait.split('d');
     let sliced = diced[1].split(diced[1].includes('+') ? '+' : '-');
 
     let n = diced[0];
     let s = sliced[0];
     let b = diced[1].includes('+') ? sliced[1] : -sliced[1];
 
-    //! REFACTOR WILD TO SPLIT SIMILAR TO REQUIRED TO TAKE IN MULTIPLE ROLLS
 		await interaction.reply(`Trait: ${inputTrait}\nWild Die: 1d${inputWild}`);
     let trait = await generate(n, s, b)
     await generate(1, inputWild).then(wild => {
@@ -107,8 +95,3 @@ module.exports = {
     }).catch(err => interaction.editReply(err));
 	},
 };
-
-
-// ! redo this to take in minimum 1 string formatted #d# and then multiple (possibly unlimited) optional inputs with #d# param, though this is unfortunate since it means i would need to undo a lot of things and might not even work as intended and cause stupid
-
-//? maybe make a new command called "traitRoll" that takes in a die size and optional modifier then rolls it with a d6 and tells you whether it crit fails and each die result
