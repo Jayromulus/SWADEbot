@@ -7,108 +7,139 @@ const rollDice = (base, bonus = 0) => {
 
 const explode = async (number, sides, bonus) => {
   let rolls = [];
-  // track the current roll index
   let currentRoll = 0;
-  // for as long as the current die index being rolled is lower than the number of dice being rolled
+  let calculate, lowRolls, low, length, total;
+
   while (currentRoll < number) {
-    // box to hold the values of the current dice and result from each roll
     let result;
     let currentDice = [];
-    // roll the die of size provided by the args
+    
     result = rollDice(sides);
-    // console.log('result:', result)
-    // add the result into the roll list
     currentDice.push(result);
-    // if the result is the same as the size of the die being rolled (meaning it is a max roll)
-    while (result === sides) {
-      // reset result's value to a new roll and add it to the array of the current roll
+
+    while (result === parseInt(sides)) {
       result = rollDice(sides);
       currentDice.push(result);
     }
+
     rolls.push(currentDice);
     currentRoll++;
   }
   if(bonus) rolls.push(bonus);
-  return rolls.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+
+  calculate = rolls.flat();
+  total = calculate.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  lowRolls = rolls.filter(r => r.length < 2 );
+  low = Math.min(...lowRolls.flat());
+  length = rolls.length;
+
+  return { total, low, length };
 };
 
 const standard = async (number, sides, bonus) => {
   let rolls = [];
+  let low, length, total;
+
   for (let n = 0; n < number; n++) {
-    let indiv = [];
-    indiv.push(rollDice(sides));
-    if(bonus) rolls.push(bonus);
+    let indiv = rollDice(sides);
     rolls.push(indiv);
+    if (bonus) rolls.push(bonus);
   }
-  return rolls.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+
+  if(bonus) rolls.push(bonus);
+
+  total = rolls.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  low = Math.min(...rolls);
+  length = rolls.length;
+
+  return { total, low, length };
 };
 
 const generate = (number, sides, type, bonus) => {
   return new Promise(async (res, rej) => {
     try {
-      if(type === 'explode') {
+      if (type === 'explode') {
         let result = await explode(number, sides, bonus);
         res(result);
       } else {
         let result = await standard(number, sides, bonus);
+        console.log(result)
         res(result);
       }
-    } catch(e) {
+    } catch (e) {
       rej(e)
     }
   })
 };
 
+const displayText = (input1, input2 = {}) => {
+  console.log(input2 ? 'YIKES' : 'radical')
+}
+
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('roll')
-		.setDescription('Rolls an exploding trait roll using provided options')
+  data: new SlashCommandBuilder()
+    .setName('roll')
+    .setDescription('Rolls an exploding trait roll using provided options')
     .addStringOption(option =>
       option
         .setName('set_1')
-        .setDescription('dice to roll #d#(+/-#)')
+        .setDescription('dice to roll #d#')
         .setRequired(true))
     .addStringOption(option =>
       option
         .setName('set_2')
-        .setDescription('dice to roll #d#(+/-#)')),
-	async execute(interaction) {
+        .setDescription('dice to roll #d#')),
+  async execute(interaction) {
     if (!interaction.isChatInputCommand()) return;
 
-    let pattern = /^\+?(0|[1-9]\d*)d\+?(0|[1-9]\d*)(\+|\-[1-9]\d*)?$/;
+    let pattern = /^\+?(0|[1-9]\d*)d\+?(0|[1-9]\d*)(\!)?(\+|\-[1-9]\d*)?$/;
 
-    let requiredInput = interaction.options._hoistedOptions[0].value.trim()
-    let optionalInput1 = interaction.options._hoistedOptions[1] ? interaction.options._hoistedOptions[1].value.trim() : null;
+    let requiredInput = interaction.options._hoistedOptions[0].value.trim();
+    let optionalInput1 = interaction.options._hoistedOptions[1] ? interaction.options._hoistedOptions[1].value.trim() : undefined;
 
-    if(!pattern.test(inputTrait)) {
+    if (!pattern.test(requiredInput)) {
       await interaction.reply('Invalid Input');
       return;
     };
 
-    let diced = requiredInput.split('d');
-    let sliced = diced[1].split(diced[1].includes('+') ? '+' : '-');
+    let diced1 = requiredInput.split('d');
+    let sliced1 = diced1[1].split(diced1[1].includes('+') ? '+' : '-');
 
-    let n = diced[0];
-    let s = sliced[0];
-    let b = diced[1].includes('+') ? sliced[1] : -sliced[1];
+    let n1 = diced1[0];
+    let t1 = diced1[1].includes('!') ? 'explode' : 'standard';
+    let s1 = t1 === 'explode' ? sliced1[0].split('!')[0] : sliced1[0];
+    let b1 = diced1[1].includes('+') ? sliced1[1] : -sliced1[1];
 
-    //! REFACTOR WILD TO SPLIT SIMILAR TO REQUIRED TO TAKE IN MULTIPLE ROLLS
-		await interaction.reply(`Trait: ${inputTrait}\nWild Die: 1d${inputWild}`);
-    let trait = await generate(n, s, b)
-    await generate(1, inputWild).then(wild => {
-      if(trait.length === 1 && wild.length === 1)
-        if(trait.low === 1 && wild.low === 1) {
-          interaction.editReply('Critical Failure');
-          return;
-        }
-      // console.log('trait:',trait);
-      // console.log('wild:',wild);
-      interaction.editReply(`**RESULT: ${trait.total > wild.total ? trait.total : wild.total }**\n\nTrait: ${trait.total}\nWild: ${wild.total}`)
-    }).catch(err => interaction.editReply(err));
-	},
+    let diced2;
+    let sliced2;
+    let n2;
+    let s2;
+    let b2;
+    let t2;
+    if (optionalInput1 !== undefined) {
+      diced2 = optionalInput1.split('d');
+      sliced2 = diced2[1].split(diced1[1].includes('+') ? '+' : '-');
+
+      n2 = diced2[0];
+      t2 = diced2[1].includes('!') ? 'explode' : 'standard';
+      s2 = t2 === 'explode' ? sliced2[0].split('!')[0] : sliced2[0];
+      b2 = diced2[1].includes('+') ? sliced2[1] : -sliced2[1];
+    }
+
+    await interaction.reply(`${optionalInput1 ? 'First Roll: ' : 'Rolling: '}: ${requiredInput}${optionalInput1 ? `\nSecond Roll: ${optionalInput1}` : ''}`);
+    let trait = await generate(n1, s1, t1, b1).catch(err => interaction.editReply(err));
+    if (optionalInput1) {
+      await generate(n2, s2, t2, b2).then(opt => {
+        if (trait.length === 1 && opt.length === 1)
+          if (trait.low === 1 && opt.low === 1) {
+            interaction.editReply('Critical Failure');
+            return;
+          }
+        console.log(opt)
+        interaction.editReply(`**RESULT:**\n\n${requiredInput}: ${trait.total}\n${optionalInput1}: ${opt.total}`);
+      }).catch(err => interaction.editReply(err));
+    } else {
+      interaction.editReply(`**RESULT:**\n\nTotal: ${trait.total}`)
+    }
+  },
 };
-
-
-// ! redo this to take in minimum 1 string formatted #d# and then multiple (possibly unlimited) optional inputs with #d# param, though this is unfortunate since it means i would need to undo a lot of things and might not even work as intended and cause stupid
-
-//? maybe make a new command called "traitRoll" that takes in a die size and optional modifier then rolls it with a d6 and tells you whether it crit fails and each die result
