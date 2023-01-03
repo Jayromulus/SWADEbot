@@ -85,7 +85,7 @@ module.exports = {
           interaction.editReply('Critical Failure');
           return;
         }
-      interaction.editReply(`**RESULT: ${traitRoll.total > wildRoll.total ? traitRoll.total : wildRoll.total }**\n\nTrait (1d${trait}${bonus ? '+' + bonus : ''}): ${traitRoll.total}\nWild (1d${wild}): ${wildRoll.total}`)
+      interaction.editReply(`**RESULT: ${traitRoll.total > wildRoll.total ? traitRoll.total : wildRoll.total }**\n\t- Trait (1d${trait}${bonus ? '+' + bonus : ''}): ${traitRoll.total}\n\t- Wild (1d${wild}): ${wildRoll.total}`)
     }).catch(err => interaction.editReply(err));
 	},
 };
