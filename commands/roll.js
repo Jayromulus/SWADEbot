@@ -25,7 +25,7 @@ const explode = async (number, sides, bonus) => {
     rolls.push(currentDice);
     currentRoll++;
   }
-  if(bonus) rolls.push(bonus);
+  if(bonus) rolls.push([bonus]);
 
   calculate = rolls.flat();
   total = calculate.reduce((a, b) => parseInt(a) + parseInt(b), 0);
