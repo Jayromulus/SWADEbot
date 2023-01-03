@@ -8,7 +8,7 @@ const rollDice = (base, bonus = 0) => {
 const explode = async (number, sides, bonus) => {
   let rolls = [];
   let currentRoll = 0;
-  let calculate, lowRolls, low, length, total;
+  let calculate, high, highRolls, lowRolls, low, length, total;
 
   while (currentRoll < number) {
     let result;
@@ -29,16 +29,18 @@ const explode = async (number, sides, bonus) => {
 
   calculate = rolls.flat();
   total = calculate.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  highRolls = rolls.map(r => r.reduce((a, b) => parseInt(a) + parseInt(b), 0));
   lowRolls = rolls.filter(r => r.length < 2 );
   low = Math.min(...lowRolls.flat());
+  high = Math.max(...highRolls.flat());
   length = rolls.length;
 
-  return { total, low, length };
+  return { high, low, length, rolls, total };
 };
 
 const standard = async (number, sides, bonus) => {
   let rolls = [];
-  let low, length, total;
+  let high, low, length, total;
 
   for (let n = 0; n < number; n++) {
     let indiv = rollDice(sides);
@@ -50,9 +52,10 @@ const standard = async (number, sides, bonus) => {
 
   total = rolls.reduce((a, b) => parseInt(a) + parseInt(b), 0);
   low = Math.min(...rolls);
+  high = Math.max(...rolls);
   length = rolls.length;
 
-  return { total, low, length };
+  return { high, low, length, rolls, total };
 };
 
 const generate = (number, sides, type, bonus) => {
@@ -72,8 +75,12 @@ const generate = (number, sides, type, bonus) => {
   })
 };
 
-const displayText = (input1, input2 = {}) => {
-  console.log(input2 ? 'YIKES' : 'radical')
+const displayText = (input1, input2 = []) => {
+  let display;
+  display = `**${input1[0]}:**\n\t- total: ${input1[1].total}\n\t- high: ${input1[1].high}\n\t- low: ${input1[1].low}`;
+  if(!input2.length) return display;
+  display += `\n\n**${input2[0]}:**\n\t- total: ${input2[1].total}\n\t- high: ${input2[1].high}\n\t- low: ${input2[1].low}`;
+  return display;
 }
 
 module.exports = {
@@ -126,7 +133,7 @@ module.exports = {
       b2 = diced2[1].includes('+') ? sliced2[1] : -sliced2[1];
     }
 
-    await interaction.reply(`${optionalInput1 ? 'First Roll: ' : 'Rolling: '}: ${requiredInput}${optionalInput1 ? `\nSecond Roll: ${optionalInput1}` : ''}`);
+    await interaction.reply(`${optionalInput1 ? 'First Roll: ' : 'Rolling: '}${requiredInput}${optionalInput1 ? `\nSecond Roll: ${optionalInput1}` : ''}`);
     let trait = await generate(n1, s1, t1, b1).catch(err => interaction.editReply(err));
     if (optionalInput1) {
       await generate(n2, s2, t2, b2).then(opt => {
@@ -135,11 +142,13 @@ module.exports = {
             interaction.editReply('Critical Failure');
             return;
           }
-        console.log(opt)
-        interaction.editReply(`**RESULT:**\n\n${requiredInput}: ${trait.total}\n${optionalInput1}: ${opt.total}`);
+        let response = displayText([requiredInput, trait], [optionalInput1, opt]);
+        console.log('response',response)
+        interaction.editReply(response);
       }).catch(err => interaction.editReply(err));
     } else {
-      interaction.editReply(`**RESULT:**\n\nTotal: ${trait.total}`)
+      let response = displayText([requiredInput, trait]);
+      interaction.editReply(response);
     }
   },
 };
