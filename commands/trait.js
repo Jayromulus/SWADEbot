@@ -8,33 +8,35 @@ const rollDice = (base, bonus = 0) => {
 
 const explode = async (number, sides, bonus) => {
   let rolls = [];
-  // track the current roll index
   let currentRoll = 0;
-  // for as long as the current die index being rolled is lower than the number of dice being rolled
+  let calculate, high, highRolls, lowRolls, low, length, total;
+
   while (currentRoll < number) {
-    // box to hold the values of the current dice and result from each roll
     let result;
     let currentDice = [];
-    // roll the die of size provided by the args
+    
     result = rollDice(sides);
-    // console.log('result:', result)
-    // add the result into the roll list
     currentDice.push(result);
-    // console.log('result:', result == sides);
-    // if the result is the same as the size of the die being rolled (meaning it is a max roll)
-    while (result == sides) {
-      // reset result's value to a new roll and add it to the array of the current roll
+
+    while (result === parseInt(sides)) {
       result = rollDice(sides);
       currentDice.push(result);
     }
-    rolls.push(...currentDice);
+
+    rolls.push(currentDice);
     currentRoll++;
   }
   if(bonus) rolls.push(bonus);
-  let total = rolls.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-  let low = Math.min(rolls);
-  let length = rolls.length
-  return { total, low, length };
+
+  calculate = rolls.flat();
+  total = calculate.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  highRolls = rolls.map(r => r.reduce((a, b) => parseInt(a) + parseInt(b), 0));
+  lowRolls = rolls.filter(r => r.length < 2 );
+  low = Math.min(...lowRolls.flat());
+  high = Math.max(...highRolls.flat());
+  length = rolls.length;
+
+  return { high, low, length, rolls, total };
 };
 
 const generate = (number, sides, bonus) => {

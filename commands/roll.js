@@ -81,7 +81,7 @@ const displayText = (input1, input2 = []) => {
   if(!input2.length) return display;
   display += `\n\n**${input2[0]}:**\n\t- total: ${input2[1].total}\n\t- high: ${input2[1].high}\n\t- low: ${input2[1].low}`;
   return display;
-}
+};
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -104,8 +104,15 @@ module.exports = {
     let requiredInput = interaction.options._hoistedOptions[0].value.trim();
     let optionalInput1 = interaction.options._hoistedOptions[1] ? interaction.options._hoistedOptions[1].value.trim() : undefined;
 
-    if (!pattern.test(requiredInput)) {
-      await interaction.reply('Invalid Input');
+    if (!pattern.test(requiredInput) || (optionalInput1 && !pattern.test(optionalInput1))) {
+      if (!pattern.test(requiredInput) && (optionalInput1 && !pattern.test(optionalInput1))) {
+        await interaction.reply(`Invalid Input: ${requiredInput}, ${optionalInput1}`);
+      }
+      else if(!pattern.test(requiredInput)) {
+        await interaction.reply(`Invalid Input: ${requiredInput}`);
+      } else {
+        await interaction.reply(`Invalid Input: ${optionalInput1}`);
+      }
       return;
     };
 
