@@ -54,7 +54,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('trait')
 		.setDescription('Rolls an exploding trait roll using provided options')
-    .addStringOption(option =>
+    .addNumberOption(option =>
       option
         .setName('trait')
         .setDescription('size of your trait (no spaces between modifier)')
