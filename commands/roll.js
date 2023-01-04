@@ -1,9 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-
-const rollDice = (base, bonus = 0) => {
-  let rand = Math.floor(Math.random() * base + 1) + bonus;
-  return rand;
-};
+const { generate } = require('../helpers');
 
 const processInput = (input) => {
   let bonus, diced, number, sides, sliced, type;
@@ -17,75 +13,6 @@ const processInput = (input) => {
   bonus = diced[1].includes('+') ? sliced[1] : -sliced[1];
 
   return { number, type, sides, bonus };
-};
-
-const explode = async (number, sides, bonus) => {
-  let rolls = [];
-  let currentRoll = 0;
-  let calculate, high, highRolls, lowRolls, low, length, total;
-
-  while (currentRoll < number) {
-    let result;
-    let currentDice = [];
-
-    result = rollDice(sides);
-    currentDice.push(result);
-
-    while (result === parseInt(sides)) {
-      result = rollDice(sides);
-      currentDice.push(result);
-    }
-
-    rolls.push(currentDice);
-    currentRoll++;
-  }
-  if (bonus) rolls.push([bonus]);
-
-  calculate = rolls.flat();
-  total = calculate.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-  highRolls = rolls.map(r => r.reduce((a, b) => parseInt(a) + parseInt(b), 0));
-  lowRolls = rolls.filter(r => r.length < 2);
-  low = Math.min(...lowRolls.flat());
-  high = Math.max(...highRolls.flat());
-  length = rolls.length;
-
-  return { high, low, length, rolls, total };
-};
-
-const standard = async (number, sides, bonus) => {
-  let rolls = [];
-  let high, low, length, total;
-
-  for (let n = 0; n < number; n++) {
-    let indiv = rollDice(sides);
-    rolls.push(indiv);
-    if (bonus) rolls.push(bonus);
-  }
-
-  if (bonus) rolls.push(bonus);
-
-  total = rolls.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-  low = Math.min(...rolls);
-  high = Math.max(...rolls);
-  length = rolls.length;
-
-  return { high, low, length, rolls, total };
-};
-
-const generate = (number, sides, type, bonus) => {
-  return new Promise(async (res, rej) => {
-    try {
-      if (type === 'explode') {
-        let result = await explode(number, sides, bonus);
-        res(result);
-      } else {
-        let result = await standard(number, sides, bonus);
-        res(result);
-      }
-    } catch (e) {
-      rej(e);
-    }
-  })
 };
 
 const displayText = (input1, input2 = []) => {
