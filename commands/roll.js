@@ -113,7 +113,7 @@ module.exports = {
     if (!interaction.isChatInputCommand()) return;
     let pattern, requiredInput, optionalInput, required, optional, requiredData, optionalData, response;
 
-    pattern = /^\+?(0|[1-9]\d*)d\+?(0|[1-9]\d*)(\!)?(\+|\-[1-9]\d*)?$/;
+    pattern = /^\+?([1-9]\d*)d\+?([1-9]\d*)(\!)?(\+|\-[1-9]\d*)?$/;
 
     requiredInput = interaction.options.getString('set_1').trim();
     optionalInput = interaction.options.getString('set_2') ? interaction.options.getString('set_2').trim() : undefined;
