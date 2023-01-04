@@ -13,6 +13,7 @@ for (const file of commandFiles) {
 }
 
 // Construct and prepare an instance of the REST module
+// const rest = new REST({ version: '10' }).setToken(process.env.PROD_TOKEN);
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 
 // and deploy your commands!
@@ -20,14 +21,17 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 	try {
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
+    // uncomment to make global ????
+    // await rest.put(Routes.applicationGuildCommands(process.env.PROD_CLIENT), { body: [] })
     await rest.put(Routes.applicationGuildCommands(process.env.CLIENT, process.env.GUILD), { body: [] })
     .then(() => console.log('Successfully deleted all guild commands.'))
     .catch(console.error);
+    
 		// The put method is used to fully refresh all commands in the guild with the current set
 		const data = await rest.put(
 			Routes.applicationGuildCommands(process.env.CLIENT, process.env.GUILD),
       // comment above and uncomment below to make comands global
-    	// Routes.applicationCommands(process.env.CLIENT),
+    	// Routes.applicationCommands(process.env.PROD_CLIENT),
 			{ body: commands },
 		);
 

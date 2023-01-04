@@ -1,1932 +1,1771 @@
 {
-  "shortsword": {
-    "name": "Shortsword",
+  "Shortsword": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "includes cavalry sabers",
     "rof": 0,
     "shots": 0
   },
-  "longsword": {
-    "name": "Longsword",
+  "Longsword": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d8!,str",
     "ap": 0,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "basic swords and scimitars",
     "rof": 0,
     "shots": 0
   },
-  "greatsword": {
-    "name": "Greatsword",
+  "Greatsword": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d10!,str",
     "ap": 0,
     "min_str": "d10",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "two hands",
     "rof": 0,
     "shots": 0
   },
-  "hand_axe": {
-    "name": "Hand Axe",
+  "Hand Axe": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
-    "notes": "",
+    "notes": "n/a",
     "rof": 0,
     "shots": 0
   },
-  "battleaxe": {
-    "name": "Battleaxe",
+  "Battleaxe": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d8!,str",
     "ap": 0,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
-    "notes": "",
+    "notes": "n/a",
     "rof": 0,
     "shots": 0
   },
-  "greataxe": {
-    "name": "Greataxe",
+  "Greataxe": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d10!,str",
     "ap": 2,
     "min_str": "d10",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "parry - 1, two hands",
     "rof": 0,
     "shots": 0
   },
-  "light_club": {
-    "name": "Light Clue",
+  "Light Club": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "a sign of low thuggery",
     "rof": 0,
     "shots": 0
   },
-  "heavy_club": {
-    "name": "Heavy Club",
+  "Heavy Club": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "a sign of low thuggery",
     "rof": 0,
     "shots": 0
   },
-  "dagger": {
-    "name": "Dagger",
+  "Dagger": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1 (3/6/12)",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "knife": {
-    "name": "Knife",
+  "Knife": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1 (3/6/12)",
     "notes": "1\" range melee, range in () is for throwing",
     "rof": 1,
     "shots": 0
   },
-  "flail": {
-    "name": "Flail",
+  "Flail": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "ignores shield bonus",
     "rof": 0,
     "shots": 0
   },
-  "halberd": {
-    "name": "Halberd",
+  "Halberd": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d8!,str",
     "ap": 0,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "2",
     "notes": "two hands",
     "rof": 0,
     "shots": 0
   },
-  "katana": {
-    "name": "Katana",
+  "Katana": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!+1,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "two hands",
     "rof": 0,
     "shots": 0
   },
-  "lance": {
-    "name": "Lance",
+  "Lance": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d8!,str",
     "ap": 0,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "3",
     "notes": "AP 2 when charging, only usable in mounted combat",
     "rof": 0,
     "shots": 0
   },
-  "lance_hellfrost": {
-    "name": "Lance (Hellfrost)",
+  "Lance (Hellfrost)": {
     "source": "Hellfrost Player Handbook pg.42",
     "damage": "1d8!,str",
     "ap": 0,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "3",
     "notes": "AP 2 when charging",
     "rof": 0,
     "shots": 0
   },
-  "mace": {
-    "name": "Mace",
+  "Mace": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
-    "notes": "",
+    "notes": "n/a",
     "rof": 0,
     "shots": 0
   },
-  "maul": {
-    "name": "Maul",
+  "Maul": {
     "source": "SWADE Player Handbook pg.72",
     "damage": " 1d10!,str",
     "ap": 0,
     "min_str": "d10",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "two hands, + 2 damage to break objects",
     "rof": 0,
     "shots": 0
   },
-  "maul_hellfrost": {
-    "name": "Maul (hellfrost)",
+  "Maul (hellfrost)": {
     "source": "Hellfrost Player Handbook pg.42",
     "damage": " 1d10!,str",
     "ap": 0,
     "min_str": "d10",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "two hands, ap 2 vs rigid armor, parry - 1",
     "rof": 0,
     "shots": 0
   },
-  "pike": {
-    "name": "Pike",
+  "Pike": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d8!,str",
     "ap": 0,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "3",
     "notes": "two hands",
     "rof": 0,
     "shots": 0
   },
-  "rapier": {
-    "name": "Rapier",
+  "Rapier": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "parry + 1",
     "rof": 0,
     "shots": 0
   },
-  "spear": {
-    "name": "Spear",
+  "Spear": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "2 (3/6/12)",
     "notes": "parry + 1 if used two handed",
     "rof": 0,
     "shots": 0
   },
-  "staff": {
-    "name": "Staff",
+  "Staff": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "2",
     "notes": "parry + 1, two hands",
     "rof": 0,
     "shots": 0
   },
-  "warhammer": {
-    "name": "Warhammer",
+  "Warhammer": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 1,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "spiked",
     "rof": 0,
     "shots": 0
   },
-  "warhammer_hellfrost": {
-    "name": "Warhammer (Hellfrost)",
+  "Warhammer (Hellfrost)": {
     "source": "Hellfrost Player Handbook pg.42",
     "damage": "1d6!,str",
     "ap": 1,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "ap 1 vs rigid armor",
     "rof": 0,
     "shots": 0
   },
-  "bangstick": {
-    "name": "Bangstick",
+  "Bangstick": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "a shotgun shell on a stick to use in melee; must reload with a fresh shell (one action)",
     "rof": 0,
     "shots": 0
   },
-  "bayonet": {
-    "name": "Bayonet",
+  "Bayonet": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "2",
     "notes": "two hands",
     "rof": 0,
     "shots": 0
   },
-  "bayonet_on_rifle": {
-    "name": "Bayonet (on rifle)",
+  "Bayonet (on rifle)": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "2",
     "notes": "parry + 1",
     "rof": 0,
     "shots": 0
   },
-  "billy_club": {
-    "name": "Billy Club",
+  "Billy Club": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "often carried by law enforcement",
     "rof": 0,
     "shots": 0
   },
-  "baton": {
-    "name": "Baton",
+  "Baton": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "often carried by law enforcement",
     "rof": 0,
     "shots": 0
   },
-  "brass_knuckles": {
-    "name": "Brass Knuckles",
+  "Brass Knuckles": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "does not count as a weapon for **Unarmed Defender**",
     "rof": 0,
     "shots": 0
   },
-  "chainsaw": {
-    "name": "Chainsaw",
+  "Chainsaw": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "2d6!+4",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "critical failure hits the user",
     "rof": 0,
     "shots": 0
   },
-  "switchblade": {
-    "name": "Switchblade",
+  "Switchblade": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "-2 to notice if being hidden",
     "rof": 0,
     "shots": 0
   },
-  "survival_knife": {
-    "name": "Survival Knife",
+  "Survival Knife": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "basic tools in handle add + 1 to survival rolls",
     "rof": 0,
     "shots": 0
   },
-  "molecular_knife": {
-    "name": "Molecular Knife",
+  "Molecular Knife": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d4!+2,str",
     "ap": 2,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "cannot be thrown",
     "rof": 0,
     "shots": 0
   },
-  "molecular_sword": {
-    "name": "Molecular Sword",
+  "Molecular Sword": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d8!+2,str",
     "ap": 4,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
-    "notes": "",
+    "notes": "n/a",
     "rof": 0,
     "shots": 0
   },
-  "laser_sword": {
-    "name": "Laser Sword",
+  "Laser Sword": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!+8,str",
     "ap": 12,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
-    "notes": "",
+    "notes": "n/a",
     "rof": 0,
     "shots": 0
   },
-  "throwing_axe": {
-    "name": "Throwing Axe",
+  "Throwing Axe": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "3/6/12",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "bow": {
-    "name": "Bow",
+  "Bow": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "2d6!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "12/24/48",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "hand_drawn_crossbow": {
-    "name": "Hand Drawn Crossbow",
+  "Hand Drawn Crossbow": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "2d6!",
     "ap": 2,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "10/20/40",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "heavy_crossbow": {
-    "name": "Heavy Crossbow",
+  "Heavy Crossbow": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "15/30/60",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "longbow": {
-    "name": "Longbow",
+  "Longbow": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "2d6!",
     "ap": 1,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "15/30/60",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "weighted_net": {
-    "name": "Weighted Net",
+  "Weighted Net": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "0d0",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "a successful hit means the target is **Entangled**. the net is Hardness 10 and is vulnerable only to cutting attacks",
     "rof": 1,
     "shots": 0
   },
-  "sling": {
-    "name": "Sling",
+  "Sling": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "4/8/16",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "javelin": {
-    "name": "Javelin",
+  "Javelin": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "3/6/12",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "short_spear": {
-    "name": "Short Spear",
+  "Short Spear": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "3/6/12",
     "notes": "short spear in melee combat (Hellfrost version only [Hellfrost Player Handbook pg.42])",
     "rof": 1,
     "shots": 0
   },
-  "short_spear_hellfrost": {
-    "name": "Short Spear (Hellfrost)",
+  "Short Spear (Hellfrost)": {
     "source": "Hellfrost Player Handbook pg.42",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
-    "notes": "",
+    "notes": "n/a",
     "rof": 0,
     "shots": 0
   },
-  "long_spear": {
-    "name": "Long Spear",
+  "Long Spear": {
     "source": "Hellfrost Player Handbook pg.42",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "2",
     "notes": "parry + 1, two hands",
     "rof": 0,
     "shots": 0
   },
-  "compound_bow": {
-    "name": "Compound Bow",
+  "Compound Bow": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "1d6!,str",
     "ap": 1,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "12/24/48",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "crossbow": {
-    "name": "Crossbow",
+  "Crossbow": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "2d6!",
     "ap": 2,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "15/30/60",
     "notes": "1 action to reload (hellfrost)",
     "rof": 1,
     "shots": 0
   },
-  "flintlock_pistol": {
-    "name": "Flintlock Pistol",
+  "Flintlock Pistol": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "2d6!+1",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "5/10/20",
     "notes": "reload 3",
     "rof": 1,
     "shots": 0
   },
-  "musket": {
-    "name": "Musket",
+  "Musket": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "2d8!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "10/20/40",
     "notes": "reload 3",
     "rof": 1,
     "shots": 0
   },
-  "blunderbuss_far": {
-    "name": "Blunderbuss (far range)",
+  "Blunderbuss (far range)": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "1d6!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "40",
     "notes": "treated as a shotgun, reload 3",
     "rof": 1,
     "shots": 0
   },
-  "blunderbuss_mid": {
-    "name": "Blunderbuss (mid range)",
+  "Blunderbuss (mid range)": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "2d6!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "20",
     "notes": "treated as a shotgun, reload 3",
     "rof": 1,
     "shots": 0
   },
-  "blunderbuss_close": {
-    "name": "Blunderbuss (close range)",
+  "Blunderbuss (close range)": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "10",
     "notes": "treated as a shotgun, reload 3",
     "rof": 1,
     "shots": 0
   },
-  "kentucky_rifle": {
-    "name": "Kentucky Rifle",
+  "Kentucky Rifle": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "15/30/60",
     "notes": "reload 4",
     "rof": 1,
     "shots": 0
   },
-  "springfield_model_1861": {
-    "name": "Springfield Model 1861",
+  "Springfield Model 1861": {
     "source": "SWADE Player Handbook pg.73",
     "damage": "2d8!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "15/30/60",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "derringer": {
-    "name": "Derringer (.41)",
+  "Derringer (.41)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d4!",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "3/6/12",
     "notes": "-2 to notice if hidden",
     "rof": 1,
     "shots": 2
   },
-  "police_revolver": {
-    "name": "Police Revolver (.38)",
+  "Police Revolver (.38)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d6",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "10/20/40",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 6
   },
-  "colt_peacemaker": {
-    "name": "Colt Peacemaker (.45)",
+  "Colt Peacemaker (.45)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d6!+1",
     "ap": 1,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "12/24/48",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 6
   },
-  "smith_and_wesson": {
-    "name": "Smith & Wesson (.357)",
+  "Smith & Wesson (.357)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d6!+1",
     "ap": 1,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "12/24/48",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 6
   },
-  "colt_1911": {
-    "name": "Colt 1911 (.45)",
+  "Colt 1911 (.45)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d6!+1",
     "ap": 1,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "12/24/48",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 7
   },
-  "desert_eagle": {
-    "name": "Desert Eagle (.50)",
+  "Desert Eagle (.50)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "15/30/60",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 7
   },
-  "glock": {
-    "name": "Glock (9mm)",
+  "Glock (9mm)": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "1d6!",
     "ap": 1,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "12/24/48",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 17
   },
-  "ruger": {
-    "name": "Ruger (.22)",
+  "Ruger (.22)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d4!",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "10/20/40",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 9
   },
-  "hk_mp5": {
-    "name": "H&K MP5 (9mm)",
+  "H&K MP5 (9mm)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d6!",
     "ap": 1,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "12/24/48",
-    "notes": "",
+    "notes": "n/a",
     "rof": 3,
     "shots": 30
   },
-  "tommy_gun": {
-    "name": "Tommy Gun (.45)",
+  "Tommy Gun (.45)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d6!+1",
     "ap": 1,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "12/24/48",
     "notes": "may also use a 50-round drum which increases weight by 2 and costs 50",
     "rof": 3,
     "shots": 20
   },
-  "uzi": {
-    "name": "Uzi (9mm)",
+  "Uzi (9mm)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d6!",
     "ap": 1,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "12/24/48",
-    "notes": "",
+    "notes": "n/a",
     "rof": 3,
     "shots": 32
   },
-  "double_barrel_far": {
-    "name": "Double-Barrel Shotgun (far range)",
+  "Double-Barrel Shotgun (far range)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "1d6!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "48",
     "notes": "far range of double barrel shotgun",
     "rof": 1,
     "shots": 2
   },
-  "double_barrel_mid": {
-    "name": "Double-Barrel Shotgun (mid range)",
+  "Double-Barrel Shotgun (mid range)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d6!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "24",
     "notes": "mid range of double barrel shotgun",
     "rof": 1,
     "shots": 2
   },
-  "double_barrel_close": {
-    "name": "Double-Barrel Shotgun (close range)",
+  "Double-Barrel Shotgun (close range)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "12",
     "notes": "close range of double barrel shotgun",
     "rof": 1,
     "shots": 2
   },
-  "pump_action_far": {
-    "name": "Pump Action Shotgun (far range)",
+  "Pump Action Shotgun (far range)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "1d6!",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "48",
     "notes": "far range of pump action shotgun",
     "rof": 1,
     "shots": 6
   },
-  "pump_action_mid": {
-    "name": "Pump Action Shotgun (mid range)",
+  "Pump Action Shotgun (mid range)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d6!",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "24",
     "notes": "mid range of pump action shotgun",
     "rof": 1,
     "shots": 6
   },
-  "pump_action_close": {
-    "name": "Pump Action Shotgun (close range)",
+  "Pump Action Shotgun (close range)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "12",
     "notes": "close range of pump action shotgun",
     "rof": 1,
     "shots": 6
   },
-  "sawed_off_db_far": {
-    "name": "Sawed-Off DB Shotgun (far range)",
+  "Sawed-Off DB Shotgun (far range)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "1d6!",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "20",
     "notes": "far range of sawed off double barrel shotgun",
     "rof": 1,
     "shots": 2
   },
-  "sawed_off_db_mid": {
-    "name": "Sawed-Off DB Shotgun (mid range)",
+  "Sawed-Off DB Shotgun (mid range)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d6!",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "10",
     "notes": "mid range of sawed off double barrel shotgun",
     "rof": 1,
     "shots": 2
   },
-  "sawed_off_db_close": {
-    "name": "Sawed-Off DB Shotgun (close range)",
+  "Sawed-Off DB Shotgun (close range)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "5",
     "notes": "close range of sawed off double barrel shotgun",
     "rof": 0,
     "shots": 0
   },
-  "streetsweeper_far": {
-    "name": "Streetsweeper (far range)",
+  "Streetsweeper (far range)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "1d6!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "48",
     "notes": "far range version of streetsweeper shotgun",
     "rof": 1,
     "shots": 12
   },
-  "streetsweeper_mid": {
-    "name": "Streetsweeper (mid range)",
+  "Streetsweeper (mid range)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "2d6!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "24",
     "notes": "mid range version of streetsweeper shotgun",
     "rof": 1,
     "shots": 12
   },
-  "streetsweeper_close": {
-    "name": "Streetsweeper (close range)",
+  "Streetsweeper (close range)": {
     "source": "SWADE Player Handbook pg.74",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "12",
     "notes": "close range version of streetsweeper shotgun",
     "rof": 0,
     "shots": 0
   },
-  "barrett": {
-    "name": "Barrett (.50)",
+  "Barrett (.50)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d10!",
     "ap": 4,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "50/100/200",
     "notes": "heavy weapon, snapfire, almost always fitted with a scope",
     "rof": 1,
     "shots": 10
   },
-  "m1_garand": {
-    "name": "M1 Garand (.30-06)",
+  "M1 Garand (.30-06)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "24/48/96",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 8
   },
-  "hunting_rifle": {
-    "name": "Hunting Rifle (.308)",
+  "Hunting Rifle (.308)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "24/48/96",
     "notes": "snapfire",
     "rof": 1,
     "shots": 5
   },
-  "sharps_big_50": {
-    "name": "Sharps Bit 50 (.50)",
+  "Sharps Bit 50 (.50)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d10!",
     "ap": 2,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "30/60/120",
     "notes": "snapfire",
     "rof": 1,
     "shots": 1
   },
-  "spencer_carbine": {
-    "name": "Spencer Carbine (.52)",
+  "Spencer Carbine (.52)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "20/40/80",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 7
   },
-  "winchester'73": {
-    "name": "Winchester '73 (.44-40)",
+  "Winchester '73 (.44-40)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!-1",
     "ap": 2,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "24/48/96",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 15
   },
-  "ak47": {
-    "name": "AK47 (7.62mm)",
+  "AK47 (7.62mm)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8+1",
     "ap": 2,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "24/48/96",
-    "notes": "",
+    "notes": "n/a",
     "rof": 3,
     "shots": 30
   },
-  "m_16": {
-    "name": "M-16 (5.56mm)",
+  "M-16 (5.56mm)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "24/48/96",
     "notes": "can also have 30 rounds, a-2 version can fire a **Three-Round Burst**",
     "rof": 3,
     "shots": 20
   },
-  "steyr_aug": {
-    "name": "Steyr AUG (5.56mm)",
+  "Steyr AUG (5.56mm)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "24/48/96",
     "notes": "may fire a **Three-Round Burst**",
     "rof": 3,
     "shots": 30
   },
-  "browning_automatic_rifle": {
-    "name": "Browning Automatic Rifle (BAR) (.30-06)",
+  "Browning Automatic Rifle (BAR) (.30-06)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "20/40/80",
     "notes": "rate of fire 1 to 3, uses magazines",
     "rof": 3,
     "shots": 20
   },
-  "gatling": {
-    "name": "Gatling (.45)",
+  "Gatling (.45)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "NA",
-    "blast": "",
+    "blast": "n/a",
     "range": "24/48/96",
-    "notes": "",
+    "notes": "n/a",
     "rof": 3,
     "shots": 100
   },
-  "minigun": {
-    "name": "Minigun (7.62mm)",
+  "Minigun (7.62mm)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!+1",
     "ap": 2,
     "min_str": "d10",
-    "blast": "",
+    "blast": "n/a",
     "range": "30/60/120",
     "notes": "mininmum rof 3, requires back harness with ammo which weighs an additional 85 pounds fully loaded",
     "rof": 5,
     "shots": 4000
   },
-  "m2_browning": {
-    "name": "M2 Browning (.50 Cal)",
+  "M2 Browning (.50 Cal)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!+1",
     "ap": 4,
     "min_str": "NA",
-    "blast": "",
+    "blast": "n/a",
     "range": "50/100/200",
     "notes": "heavy weapon",
     "rof": 3,
     "shots": 200
   },
-  "m60": {
-    "name": "M60 (7.62mm)",
+  "M60 (7.62mm)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!+1",
     "ap": 2,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "30/60/120",
-    "notes": "",
+    "notes": "n/a",
     "rof": 3,
     "shots": 100
   },
-  "mg42": {
-    "name": "MG42 (7.92mm)",
+  "MG42 (7.92mm)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!+1",
     "ap": 2,
     "min_str": "d10",
-    "blast": "",
+    "blast": "n/a",
     "range": "30/60/120",
-    "notes": "",
+    "notes": "n/a",
     "rof": 4,
     "shots": 200
   },
-  "saw_machine_gun": {
-    "name": "SAW (5.56mm)",
+  "SAW (5.56mm)": {
     "source": "SWADE Player Handbook pg.75",
     "damage": "2d8!",
     "ap": 2,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "30/60/120",
-    "notes": "",
+    "notes": "n/a",
     "rof": 4,
     "shots": 200
   },
-  "laser_pistol": {
-    "name": "Laser Pistol",
+  "Laser Pistol": {
     "source": "SWADE Player Handbook pg.76",
     "damage": "2d6!",
     "ap": 2,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "15/30/60",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 50
   },
-  "laser_smg": {
-    "name": "Laser SMG",
+  "Laser SMG": {
     "source": "SWADE Player Handbook pg.76",
     "damage": "2d6!",
     "ap": 2,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "15/30/60",
-    "notes": "",
+    "notes": "n/a",
     "rof": 4,
     "shots": 100
   },
-  "laser_rifle": {
-    "name": "Laser Rifle",
+  "Laser Rifle": {
     "source": "SWADE Player Handbook pg.76",
     "damage": "3d6!",
     "ap": 2,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "30/60/120",
-    "notes": "",
+    "notes": "n/a",
     "rof": 3,
     "shots": 100
   },
-  "gatling_laser": {
-    "name": "Gatling Laser",
+  "Gatling Laser": {
     "source": "SWADE Player Handbook pg.76",
     "damage": "3d6!+4",
     "ap": 2,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "50/100/200",
-    "notes": "",
+    "notes": "n/a",
     "rof": 4,
     "shots": 800
   },
-  "cannon_canister": {
-    "name": "Cannon (12lb) Canister",
+  "Cannon (12lb) Canister": {
     "source": "SWADE Player Handbook pg.77",
     "damage": "2d6!",
     "ap": 0,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "24\" path",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "cannon_solid_shot": {
-    "name": "Cannon (12lb) Solid Shot",
+  "Cannon (12lb) Solid Shot": {
     "source": "SWADE Player Handbook pg.77",
     "damage": "3d6!+1",
     "ap": 4,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "50/1000/200",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "cannon_shrapnel": {
-    "name": "Cannon (12lb) Shrapnel",
+  "Cannon (12lb) Shrapnel": {
     "source": "SWADE Player Handbook pg.77",
     "damage": "3d6!",
     "ap": 0,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "50/100/200",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "catapult": {
-    "name": "Catapult",
+  "Catapult": {
     "source": "SWADE Player Handbook pg.77",
     "damage": "3d6!",
     "ap": 4,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "24/48/96",
     "notes": "heavy weapon, reload time is every 5 minutes with a crew of 4",
     "rof": -1,
     "shots": 0
   },
-  "catapult_hellfrost": {
-    "name": "Catapult (Hellfrost)",
+  "Catapult (Hellfrost)": {
     "source": "Hellfrost Player Handbook pg.43",
     "damage": "3d10!",
     "ap": 10,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "50/100/200",
     "notes": "minimum range of 25\", heavy weapon, 4 actions to reload, crew 6",
     "rof": -1,
     "shots": 0
   },
-  "trebuchet": {
-    "name": "Trebuchet",
+  "Trebuchet": {
     "source": "SWADE Player Handbook pg.77",
     "damage": "3d8!",
     "ap": 4,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "30/60/120",
     "notes": "heavy weapon, reload time is every 5 minutes with a crew of 4",
     "rof": -1,
     "shots": 0
   },
-  "trebuchet_hellfrost": {
-    "name": "Trebuchet (Hellfrost)",
+  "Trebuchet (Hellfrost)": {
     "source": "Hellfrost Player Handbook pg.43",
     "damage": "3d8!",
     "ap": 6,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "SBT",
     "range": "24/48/96",
     "notes": "heavy weapon, 2 actions to reload, crew 4, minimum range of 12\"",
     "rof": -1,
     "shots": 0
   },
-  "flamethrower": {
-    "name": "Flamethrower",
+  "Flamethrower": {
     "source": "SWADE Player Handbook pg.78",
     "damage": "3d6!",
     "ap": 0,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "cone template",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 10
   },
-  "mk_ii_grenade": {
-    "name": "Mk II (WW2 Pineapple)",
+  "Mk II (WW2 Pineapple)": {
     "source": "SWADE Player Handbook pg.78",
     "damage": "3d6!",
     "ap": 0,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "4/8/16",
-    "notes": "",
+    "notes": "n/a",
     "rof": 0,
     "shots": 0
   },
-  "potato_masher_grenade": {
-    "name": "Potato Masher (WW2)",
+  "Potato Masher (WW2)": {
     "source": "SWADE Player Handbook pg.78",
     "damage": "3d6!-2",
     "ap": 0,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "5/10/20",
-    "notes": "",
+    "notes": "n/a",
     "rof": 0,
     "shots": 0
   },
-  "mk67_grenade": {
-    "name": "Mk67",
+  "Mk67": {
     "source": "SWADE Player Handbook pg.78",
     "damage": "3d6!",
     "ap": 0,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "LBT",
     "range": "5/10/20",
-    "notes": "",
+    "notes": "n/a",
     "rof": 0,
     "shots": 0
   },
-  "smoke_grenade": {
-    "name": "Smoke Grenade",
+  "Smoke Grenade": {
     "source": "SWADE Player Handbook pg.78",
     "damage": "",
     "ap": 0,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "LBT",
     "range": "5/10/20",
     "notes": "creates an area of smoke that obscures vision (-4)",
     "rof": 0,
     "shots": 0
   },
-  "stun_grenade": {
-    "name": "Stun Grenade",
+  "Stun Grenade": {
     "source": "SWADE Player Handbook pg.78",
     "damage": "",
     "ap": 0,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "LBT",
     "range": "5/10/20",
     "notes": "targets must make a vigor roll at -2 or be stunned (see page 106 SWADE ph)",
     "rof": 0,
     "shots": 0
   },
-  "anti_personnel_mine": {
-    "name": "Anti-Personnel Mine",
+  "Anti-Personnel Mine": {
     "source": "SWADE Player Handbook pg.79",
     "damage": "2d6!+2",
     "ap": 0,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "SBT",
-    "range": "",
+    "range": "n/a",
     "notes": "heavy weapon",
     "rof": 0,
     "shots": 0
   },
-  "anti_tank_mine": {
-    "name": "Anti-Tank Mine",
+  "Anti-Tank Mine": {
     "source": "SWADE Player Handbook pg.79",
     "damage": "4d6!",
     "ap": 0,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
-    "range": "",
+    "range": "n/a",
     "notes": "heavy weapon, ap 5 vs vecle's armor value (rounded up)",
     "rof": 0,
     "shots": 0
   },
-  "bouncing_betty": {
-    "name": "Bouncing Betty",
+  "Bouncing Betty": {
     "source": "SWADE Player Handbook pg.79",
     "damage": "3d6!",
     "ap": 0,
-    "min_str": "",
-    "blast": "",
-    "range": "",
+    "min_str": "n/a",
+    "blast": "n/a",
+    "range": "n/a",
     "notes": "only full overhead cover offers an armor bonus against this attack, being prone offers no protection",
     "rof": 0,
     "shots": 0
   },
-  "claymore_mine": {
-    "name": "Claymore Mine",
+  "Claymore Mine": {
     "source": "SWADE Player Handbook pg.79",
     "damage": "3d6!",
     "ap": 0,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "Special",
-    "range": "",
+    "range": "n/a",
     "notes": "fires a spray of shrapnel in a 60˚ frontal arc. everyone within 12\" is automatically hit. roll a die for all other targets up to 50\". those who get an odd result are also hit",
     "rof": 0,
     "shots": 0
   },
-  "tow_missile": {
-    "name": "TOW Missile",
+  "TOW Missile": {
     "source": "SWADE Player Handbook pg.79",
     "damage": "5d10!",
     "ap": 34,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "75/150/300",
     "notes": "heavy weapon, wire-guided millike fored from a portable or vehicle mounted launcher. doesnt require a lock, just a shooting roll, and can't be jammed",
     "rof": 1,
     "shots": 0
   },
-  "hellfire_missile": {
-    "name": "Hellifire Missile",
+  "Hellifire Missile": {
     "source": "SWADE Player Handbook pg.79",
     "damage": "5d10!",
     "ap": 40,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "150/300/600",
     "notes": "heavy weapon, a laser-guided missile fired from a vehicle mounted launcher",
     "rof": 0,
     "shots": 0
   },
-  "sidewinder_missile": {
-    "name": "Sidewinder Missile",
+  "Sidewinder Missile": {
     "source": "SWADE Player Handbook pg.79",
     "damage": "4d8!",
     "ap": 6,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "SBT",
     "range": "100/200/400",
     "notes": "heavy weapon, a short ranged heat-seeking missile fired from an aircraft",
     "rof": 0,
     "shots": 0
   },
-  "sparrow_missile": {
-    "name": "Sparrow Missile",
+  "Sparrow Missile": {
     "source": "SWADE Player Handbook pg.72",
     "damage": "5d8!",
     "ap": 6,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "SBT",
     "range": "150/300/600",
     "notes": "heavy weapon, a medium range radar-guided missile fired from an aircraft",
     "rof": 0,
     "shots": 0
   },
-  "at4": {
-    "name": "AT-4",
+  "AT-4": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d8!+2",
     "ap": 24,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "24/48/96",
     "notes": "a heavy american anti-tank weapon of the modern era",
     "rof": 1,
     "shots": 0
   },
-  "bazooka": {
-    "name": "Bazooka",
+  "Bazooka": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d8!",
     "ap": 8,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "24/48/96",
     "notes": "snapfire, additional warheads weigh 9lbs and cost $50",
     "rof": 1,
     "shots": 0
   },
-  "m203_40mm": {
-    "name": "M203 40MM",
+  "M203 40MM": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d8!",
     "ap": 0,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "24/48/96",
     "notes": "snapfire, a grenade launcher mounted on the bottom of an assault rifle",
     "rof": 0,
     "shots": 0
   },
-  "m72_law": {
-    "name": "M72 Law",
+  "M72 Law": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d8!+2",
     "ap": 22,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "24/48/96",
     "notes": "snapfire, the standard american anti-tank weapon in vietnam",
     "rof": 0,
     "shots": 0
   },
-  "panzerschreck": {
-    "name": "Panzerschreck",
+  "Panzerschreck": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d8!",
     "ap": 12,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "15/30/60",
     "notes": "snapfire, literally the \"tank terror\" rocket launcher used by german forces in ww2",
     "rof": 1,
     "shots": 0
   },
-  "torpedo": {
-    "name": "Torpedo",
+  "Torpedo": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "8d10!",
     "ap": 22,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "LBT",
     "range": "300/600/1200",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "med_machine_gun": {
-    "name": "Medium Machine Gun",
+  "Medium Machine Gun": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "2d8!+1",
     "ap": 2,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "30/60/120",
-    "notes": "",
+    "notes": "n/a",
     "rof": 3,
     "shots": 0
   },
-  "heavy_machine_gun": {
-    "name": "Heavy Machine Gun",
+  "Heavy Machine Gun": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "2d10!",
     "ap": 4,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "50/100/200",
-    "notes": "",
+    "notes": "n/a",
     "rof": 3,
     "shots": 0
   },
-  "heavy_flamethrower": {
-    "name": "Heavy Flamethrower",
+  "Heavy Flamethrower": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "3d8!",
     "ap": 0,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT/Cone",
-    "range": "",
-    "notes": "",
+    "range": "n/a",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "20mm_cannon": {
-    "name": "20mm Cannon",
+  "20mm Cannon": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "2d12!",
     "ap": 4,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "50/100/200",
-    "notes": "",
+    "notes": "n/a",
     "rof": 4,
     "shots": 0
   },
-  "25mm_cannon": {
-    "name": "25mm Cannon",
+  "25mm Cannon": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "3d8!",
     "ap": 4,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "50/100/200",
-    "notes": "",
+    "notes": "n/a",
     "rof": 3,
     "shots": 0
   },
-  "30mm_cannon": {
-    "name": "30mm Cannon",
+  "30mm Cannon": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "3d8!",
     "ap": 6,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "50/100/200",
-    "notes": "",
+    "notes": "n/a",
     "rof": 3,
     "shots": 0
   },
-  "40mm_cannon_ap": {
-    "name": "40mm Cannon (AP rounds)",
+  "40mm Cannon (AP rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d8!",
     "ap": 5,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "75/150/300",
     "notes": "AP rounds on a 40mm cannon",
     "rof": 4,
     "shots": 0
   },
-  "40mm_cannon_he": {
-    "name": "40mm Cannon (HE rounds)",
+  "40mm Cannon (HE rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "3d8!",
     "ap": 2,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "75/150/300",
     "notes": "HE rounds on a 40mm cannon",
     "rof": 0,
     "shots": 0
   },
-  "2_pd_at_gun_ap": {
-    "name": "2 pd AT Gun (AP rounds)",
+  "2 pd AT Gun (AP rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d8!",
     "ap": 5,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "75/150/300",
     "notes": "AP rounds on a 2 pd AT gun",
     "rof": 1,
     "shots": 0
   },
-  "2_pd_at_gun_he": {
-    "name": "2 pd AT Gun (HE rounds)",
+  "2 pd AT Gun (HE rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "3d6!",
     "ap": 2,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "75/150/300",
     "notes": "HE rounds on a 2 pd AT gun",
     "rof": 1,
     "shots": 0
   },
-  "37mm_at_gun_ap": {
-    "name": "37mm AT Gun (AP rounds)",
+  "37mm AT Gun (AP rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d8!",
     "ap": 3,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "50/100/200",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "37mm_at_gun_he": {
-    "name": "37mm AT Gun (HE rounds)",
+  "37mm AT Gun (HE rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d6!",
     "ap": 3,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "50/100/200",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "57mm_at_gun_ap": {
-    "name": "57mm AT Gun (AP rounds)",
+  "57mm AT Gun (AP rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d8!",
     "ap": 5,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "75/150/300",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "57mm_at_gun_he": {
-    "name": "57mm AT Gun (HE rounds)",
+  "57mm AT Gun (HE rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "3d8!",
     "ap": 3,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "75/150/300",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "75mm_tank_gun_ap": {
-    "name": "75mm Tank Gun (AP rounds)",
+  "75mm Tank Gun (AP rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d10!",
     "ap": 6,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "75/150/300",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "75mm_tank_gun_he": {
-    "name": "75mm Tank Gun (HE rounds)",
+  "75mm Tank Gun (HE rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "3d8!",
     "ap": 3,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "75/150/300",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "76mm_tank_gun_ap": {
-    "name": "76mm Tank Gun (AP rounds)",
+  "76mm Tank Gun (AP rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d10!",
     "ap": 10,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "75/150/300",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "76mm_tank_gun_he": {
-    "name": "76mm Tank Gun (HE rounds)",
+  "76mm Tank Gun (HE rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "3d8!",
     "ap": 5,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "75/150/300",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "88mm_tank_gun_ap": {
-    "name": "88mm Tank Gun (AP rounds)",
+  "88mm Tank Gun (AP rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d10!+1",
     "ap": 16,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "100/200/400",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "88mm_tank_gun_he": {
-    "name": "88mm Tank Gun (HE rounds)",
+  "88mm Tank Gun (HE rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d8!",
     "ap": 8,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "100/200/400",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "120mm_tank_gun_ap": {
-    "name": "120 Tank Gun (AP rounds)",
+  "120 Tank Gun (AP rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "5d10!",
     "ap": 31,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "100/200/400",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "120mm_tank_gun_he": {
-    "name": "120mm Tank Gun (HE rounds)",
+  "120mm Tank Gun (HE rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d8!",
     "ap": 17,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "100/200/400",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "125mm_tank_gun_ap": {
-    "name": "125mm Tank Gun (AP rounds)",
+  "125mm Tank Gun (AP rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "5d10!",
     "ap": 30,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "100/200/400",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "125mm_tank_gun_he": {
-    "name": "125mm Tank Gun (HE rounds)",
+  "125mm Tank Gun (HE rounds)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d8!",
     "ap": 15,
-    "min_str": "",
+    "min_str": "n/a",
     "blast": "MBT",
     "range": "100/200/400",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "gatling_laser_vehicle": {
-    "name": "Gatling Laser (Vehicle Mounted)",
+  "Gatling Laser (Vehicle Mounted)": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "3d6!+4",
     "ap": 4,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "50/100/200",
     "notes": "vehicular mounted gatling laser",
     "rof": 4,
     "shots": 0
   },
-  "heavy_laser": {
-    "name": "Heavy Laser",
+  "Heavy Laser": {
     "source": "SWADE Player Handbook pg.80",
     "damage": "4d10!",
     "ap": 30,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "150/300/600",
-    "notes": "",
+    "notes": "n/a",
     "rof": 1,
     "shots": 0
   },
-  "antler_staff": {
-    "name": "Antler Staff",
+  "Antler Staff": {
     "source": "Hellfrost Player Handbook pg.42",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "2",
     "notes": "parry + 1, 2 hands, notes on Hellfrost Player Handbook pg.34",
     "rof": 0,
     "shots": 0
   },
-  "bear_claw": {
-    "name": "Bear Claw",
+  "Bear Claw": {
     "source": "Hellfrost Player Handbook pg.42",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "+ 1 parry, notes on Hellfrost Player Handbook pg.34",
     "rof": 0,
     "shots": 0
   },
-  "double_toothpick": {
-    "name": "Double Toothpick",
+  "Double Toothpick": {
     "source": "Hellfrost Player Handbook pg.42",
     "damage": "1d6!,str",
     "ap": 0,
     "min_str": "d6",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "notes on Hellfrost Player Handbook pg.35",
     "rof": 0,
     "shots": 0
   },
-  "twin_toothpick": {
-    "name": "Twin Toothpick",
+  "Twin Toothpick": {
     "source": "Hellfrost Player Handbook pg.42",
     "damage": "1d8!,str",
     "ap": 0,
     "min_str": "d8",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "notes on Hellfrost Player Handbook pg.35",
     "rof": 0,
     "shots": 0
   },
-  "boot_spikes": {
-    "name": "Boot Spikes",
+  "Boot Spikes": {
     "source": "Hellfrost Player Handbook pg.42",
     "damage": "1d4!,str",
     "ap": 0,
     "min_str": "d4",
-    "blast": "",
+    "blast": "n/a",
     "range": "1",
     "notes": "kick attacks only, notes on Hellfrost Player Handbook pg.36",
     "rof": 0,
     "shots": 0
   },
-  "ballista": {
-    "name": "Ballista",
+  "Ballista": {
     "source": "Hellfrost Player Handbook pg.43",
     "damage": "3d6!",
     "ap": 3,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "25/50/100",
     "notes": "can be used against individual troops, 1 action to reload, crew 1",
     "rof": 0,
     "shots": 0
   },
-  "coldfire_thrower": {
-    "name": "Coldfire Thrower",
+  "Coldfire Thrower": {
     "source": "Hellfrost Player Handbook pg.43",
     "damage": "2d10!",
     "ap": 0,
-    "min_str": "",
-    "blast": "",
+    "min_str": "n/a",
+    "blast": "n/a",
     "range": "cone/25\"",
     "notes": "ignores armor, as vehicular flamethrower, crew 1",
     "rof": 0,
     "shots": 0
   },
-  "frame_ram": {
-    "name": "Frame Ram",
+  "Frame Ram": {
     "source": "Hellfrost Player Handbook pg.42",
     "damage": "1d6!,yd",
     "ap": 3,
-    "min_str": "",
-    "blast": "",
-    "range": "",
+    "min_str": "n/a",
+    "blast": "n/a",
+    "range": "n/a",
     "notes": "max length 10 yards",
     "rof": 0,
     "shots": 0
   },
-  "hand_ram": {
-    "name": "Hand Ram",
+  "Hand Ram": {
     "source": "Hellfrost Player Handbook pg.42",
     "damage": "1d6!,yd",
     "ap": 3,
-    "min_str": "",
-    "blast": "",
-    "range": "",
+    "min_str": "n/a",
+    "blast": "n/a",
+    "range": "n/a",
     "notes": "max length 10 yards",
     "rof": 0,
     "shots": 0

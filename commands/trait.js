@@ -52,6 +52,10 @@ const generate = (number, sides, bonus) => {
   })
 };
 
+const displayText = (traitDie, trait, wildDie, wild, bonus) => {
+  return `**RESULT: ${trait.total > wild.total ? trait.total : wild.total}**\n\t- Trait (1d${traitDie}${bonus ? '+' + bonus : ''}): ${trait.total}\n\t- Wild (1d${wildDie}): ${wild.total}`;
+}
+
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('trait')
@@ -71,7 +75,7 @@ module.exports = {
         .setDescription('size of modified wild die (optional)')),
   async execute(interaction) {
     if (!interaction.isChatInputCommand()) return;
-    let trait, wild, bonus, traitRoll, wildRoll;
+    let trait, wild, bonus, traitRoll, wildRoll, response;
 
     trait = cleanup(interaction.options.getNumber('trait'));
     wild = interaction.options.getNumber('wild') ? cleanup(interaction.options.getNumber('wild')) : 6;
@@ -85,6 +89,7 @@ module.exports = {
       if (traitRoll.low === 1 && wildRoll.low === 1)
         return interaction.editReply('Critical Failure');
 
-    return interaction.editReply(`**RESULT: ${traitRoll.total > wildRoll.total ? traitRoll.total : wildRoll.total}**\n\t- Trait (1d${trait}${bonus ? '+' + bonus : ''}): ${traitRoll.total}\n\t- Wild (1d${wild}): ${wildRoll.total}`);
+    response = displayText(trait, traitRoll, wild, wildRoll, bonus);
+    return interaction.editReply(response);
   },
 };
