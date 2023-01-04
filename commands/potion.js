@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+const { cleanup } = require('../helpers');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -8,9 +9,6 @@ module.exports = {
       option
         .setName('rank')
         .setDescription('Rank of the wand\'s cant')
-        // .setAutocomplete(true)
-        // * choices over autocomplete to force them to use a given value while allowing them to type a value initially to autofill
-        // https://discordjs.guide/slash-commands/advanced-creation.html#choices
         .setChoices(
           { name: 'Novice', value: 'Novice' },
           { name: 'Seasoned', value: 'Seasoned' },
@@ -36,8 +34,7 @@ module.exports = {
         .setRequired(true)),
   async autocomplete(interaction) {
     const focusedValue = interaction.options.getFocused();
-    // https://discordjs.guide/slash-commands/autocomplete.html#sending-results
-		const choices = ['Novice', 'Seasoned', 'Veteran', 'Legendary', 'Heroic'];
+    const choices = ['Novice', 'Seasoned', 'Veteran', 'Legendary', 'Heroic'];
 		const filtered = choices.filter(choice => choice.toLowerCase().startsWith(focusedValue.toLowerCase()));
 		await interaction.respond(
 			filtered.map(choice => ({ name: choice, value: choice })),
@@ -46,13 +43,12 @@ module.exports = {
 	async execute(interaction) {
     if (!interaction.isChatInputCommand()) return;
     const lib = { 'N': 1, 'S': 2, 'V': 3, 'H': 4, 'L': 5, };
+    let rank, cost, strength;
 
-    // console.log(interaction.options._hoistedOptions[0].value);
+    rank = lib[interaction.options.getString('rank').toUpperCase()[0]] ?? -1;
+    cost = cleanup(interaction.options.getNumber('cost'));
+    strength = interaction.options.getString('strength') === 'Major' ? 2 : 1;
 
-    const rank = lib[interaction.options._hoistedOptions[0].value[0].toUpperCase()] ?? -1;
-    const cost = interaction.options._hoistedOptions[1].value;
-    const strength = interaction.options._hoistedOptions[2].value === 'Major' ? 2 : 1;
-
-		await interaction.reply(`${rank * cost * 25 * strength}`);
+		return await interaction.reply(`${rank * cost * 25 * strength}`);
 	},
 };
