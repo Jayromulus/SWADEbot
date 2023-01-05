@@ -1,4 +1,4 @@
-# SWADEBOT
+# SWADEbot
 
 SWADEbot is a bot made using [discord.js](https://discord.js.org/#/) that has multiple tools helpful for referencing information and making rolls for the Savage Worlds system and affiliated works.
 
