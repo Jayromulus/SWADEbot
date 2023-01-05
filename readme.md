@@ -31,7 +31,3 @@ npm i
  
 ## Contributing
 Currently only accepting requests from the group this was made for, though there may become open requests in the future should there be a large enough support for this project to warrant such a time commitment.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
