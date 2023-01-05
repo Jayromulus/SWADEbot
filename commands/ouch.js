@@ -22,7 +22,7 @@ module.exports = {
         .setRequired(true)
         .setMinValue(0)),
   async execute(interaction) {
-    if(!interaction.isChatInputCommand()) return;
+    if (!interaction.isChatInputCommand()) return;
     let toughness, damage;
 
     toughness = cleanup(interaction.options.getNumber('toughness'));

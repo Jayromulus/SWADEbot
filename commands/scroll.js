@@ -2,9 +2,9 @@ const { SlashCommandBuilder } = require('discord.js');
 const { cleanup } = require('../helpers');
 
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('scroll')
-		.setDescription('Calculates the price of a provided scroll')
+  data: new SlashCommandBuilder()
+    .setName('scroll')
+    .setDescription('Calculates the price of a provided scroll')
     .addStringOption(option =>
       option
         .setName('rank')
@@ -13,7 +13,7 @@ module.exports = {
           { name: 'Novice', value: 'Novice' },
           { name: 'Seasoned', value: 'Seasoned' },
           { name: 'Veteran', value: 'Veteran' },
-          { name: 'Legendary', value: 'Legendary' } ,
+          { name: 'Legendary', value: 'Legendary' },
           { name: 'Heroic', value: 'Heroic' },
         )
         .setRequired(true))
@@ -26,20 +26,20 @@ module.exports = {
   async autocomplete(interaction) {
     const focusedValue = interaction.options.getFocused();
     const choices = ['Novice', 'Seasoned', 'Veteran', 'Legendary', 'Heroic'];
-		const filtered = choices.filter(choice => choice.toLowerCase().startsWith(focusedValue.toLowerCase()));
-		await interaction.respond(
-			filtered.map(choice => ({ name: choice, value: choice })),
-		);
+    const filtered = choices.filter(choice => choice.toLowerCase().startsWith(focusedValue.toLowerCase()));
+    await interaction.respond(
+      filtered.map(choice => ({ name: choice, value: choice })),
+    );
   },
-	async execute(interaction) {
+  async execute(interaction) {
     if (!interaction.isChatInputCommand()) return;
     const lib = { 'N': 1, 'S': 2, 'V': 3, 'H': 4, 'L': 5, };
     let rank, cost;
-    
+
     rank = lib[interaction.options.getString('rank').toUpperCase()[0]] ?? -1;
     cost = cleanup(interaction.options.getNumber('cost'));
 
     if (cost < 0 || rank < 0) await interaction.reply(`Invalid value for parameter: ${rank < 0 ? 'rank' : ''}`);
-		return await interaction.reply(`${rank * cost * 50}`);
-	},
+    return await interaction.reply(`${rank * cost * 50}`);
+  },
 };

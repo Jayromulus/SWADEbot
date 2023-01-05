@@ -22,7 +22,7 @@ client.on('messageCreate', async (message) => {
     // ?help
     case 'help':
       let assist = args[0];
-      if(!assist) {
+      if (!assist) {
         message.channel.send('Please type `?help <command>` where <command> is replaced by the command you would like to know more about');
         break;
       }
