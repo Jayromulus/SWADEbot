@@ -3,7 +3,7 @@ const { cleanup, generate } = require('../helpers');
 
 const displayText = (traitDie, trait, wildDie, wild, bonus) => {
   return `**RESULT: ${trait.total > wild.total ? trait.total : wild.total}**\n\t- Trait (1d${traitDie}${bonus ? '+' + bonus : ''}): ${trait.total}\n\t- Wild (1d${wildDie}): ${wild.total}`;
-}
+};
 
 module.exports = {
   data: new SlashCommandBuilder()

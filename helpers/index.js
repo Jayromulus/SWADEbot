@@ -4,4 +4,4 @@ module.exports = {
   explode: require('./explode'),
   standard: require('./standard'),
   generate: require('./generate'),
-}
+};
