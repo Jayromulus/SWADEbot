@@ -1,5 +1,5 @@
 const { EmbedBuilder, SlashCommandBuilder } = require('discord.js');
-const weapons = require('../weapons.json');
+const weapons = require('../assets/weapons.json');
 const weaponNames = Object.keys(weapons);
 
 const embed = (item, name) => {
