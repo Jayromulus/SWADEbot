@@ -24,10 +24,9 @@ module.exports = (number, sides, bonus) => {
 
   calculate = rolls.flat();
   total = calculate.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-  highRolls = rolls.map(r => r.reduce((a, b) => parseInt(a) + parseInt(b), 0));
-  lowRolls = rolls.filter(r => r.length < 2);
-  low = Math.min(...lowRolls.flat());
-  high = Math.max(...highRolls.flat());
+  reducedRolls = rolls.map(r => r.reduce((a, b) => parseInt(a) + parseInt(b), 0));
+  low = Math.min(...reducedRolls.flat());
+  high = Math.max(...reducedRolls.flat());
   length = rolls.length;
 
   return { high, low, length, rolls, total };
