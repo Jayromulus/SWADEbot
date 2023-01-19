@@ -21,13 +21,13 @@ npm i
 ## Usage
 | Command Syntax | Explanation |
 | - | - |
- | ![ouch](https://github.com/Jayromulus/SWADEbot/blob/slash/assets/ouch.png?raw=true) | returns the damage recieved by a player, both toughness and damage are number inputs for the user, this will not |
- | ![potion](https://github.com/Jayromulus/SWADEbot/blob/slash/assets/potion.png?raw=true) | calculates the price of a potion given a rank (as chosen from a list), the cost of the effect, and the strength of the potion |
- | ![roll](https://github.com/Jayromulus/SWADEbot/blob/slash/assets/roll.png?raw=true) | rolls dice following a format of `#d#(+/-#)` where the +/- section is optional. the first set is required while the second is optional, and an error will be send should the formatting be incorrect |
- | ![scroll](https://github.com/Jayromulus/SWADEbot/blob/slash/assets/scroll.png?raw=true) | calculates the price of a scroll with a given rank's inscription using the provided cost of the enchantment |
- | ![trait](https://github.com/Jayromulus/SWADEbot/blob/slash/assets/trait.png?raw=true) | rolls a trait roll given a number size of the player's trait die, with an option to add a bonus as well as an option to edit the wild die size (default is 6) |
- | ![wand](https://github.com/Jayromulus/SWADEbot/blob/slash/assets/wand.png?raw=true) | calculates the price of a wand with a given rank's spell of the provided cost with a number of charges in it |
- | ![weapon](https://github.com/Jayromulus/SWADEbot/blob/slash/assets/weapon.png?raw=true) | sends an embed holding information about the selected weapon, as written in by autofill |
+ | ![ouch](https://github.com/Jayromulus/SWADEbot/blob/main/assets/ouch.png?raw=true) | returns the damage recieved by a player, both toughness and damage are number inputs for the user, this will not |
+ | ![potion](https://github.com/Jayromulus/SWADEbot/blob/main/assets/potion.png?raw=true) | calculates the price of a potion given a rank (as chosen from a list), the cost of the effect, and the strength of the potion |
+ | ![roll](https://github.com/Jayromulus/SWADEbot/blob/main/assets/roll.png?raw=true) | rolls dice following a format of `#d#(+/-#)` where the +/- section is optional. the first set is required while the second is optional, and an error will be send should the formatting be incorrect |
+ | ![scroll](https://github.com/Jayromulus/SWADEbot/blob/main/assets/scroll.png?raw=true) | calculates the price of a scroll with a given rank's inscription using the provided cost of the enchantment |
+ | ![trait](https://github.com/Jayromulus/SWADEbot/blob/main/assets/trait.png?raw=true) | rolls a trait roll given a number size of the player's trait die, with an option to add a bonus as well as an option to edit the wild die size (default is 6) |
+ | ![wand](https://github.com/Jayromulus/SWADEbot/blob/main/assets/wand.png?raw=true) | calculates the price of a wand with a given rank's spell of the provided cost with a number of charges in it |
+ | ![weapon](https://github.com/Jayromulus/SWADEbot/blob/main/assets/weapon.png?raw=true) | sends an embed holding information about the selected weapon, as written in by autofill |
  
 ## Contributing
 Currently only accepting requests from the group this was made for, though there may become open requests in the future should there be a large enough support for this project to warrant such a time commitment.
