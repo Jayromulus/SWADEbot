@@ -9,6 +9,7 @@ Clone the project and use the [discord.js starter guide](https://discordjs.guide
 ```bash
 git clone https://github.com/Jayromulus/SWADEbot.git
 npm i
+npm start
 ```
 ## .env
 | Name | Value |
