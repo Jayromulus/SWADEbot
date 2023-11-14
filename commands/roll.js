@@ -1,27 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { generate } = require('../helpers');
-
-const processInput = (input) => {
-  let bonus, diced, number, sides, sliced, type;
-
-  diced = input.split('d');
-  sliced = diced[1].split(diced[1].includes('+') ? '+' : '-');
-
-  number = diced[0];
-  type = diced[1].includes('!') ? 'explode' : 'standard';
-  sides = type === 'explode' ? sliced[0].split('!')[0] : sliced[0];
-  bonus = diced[1].includes('+') ? sliced[1] : -sliced[1];
-
-  return { number, type, sides, bonus };
-};
-
-const displayText = (input1, input2 = []) => {
-  let display;
-  display = `**${input1[0]}:**\n\t- total: ${input1[1].total}\n\t- high: ${input1[1].high}\n\t- low: ${input1[1].low}`;
-  if (!input2.length) return display;
-  display += `\n\n**${input2[0]}:**\n\t- total: ${input2[1].total}\n\t- high: ${input2[1].high}\n\t- low: ${input2[1].low}`;
-  return display;
-};
+const { generate, processInput, displayText } = require('../helpers');
 
 module.exports = {
   data: new SlashCommandBuilder()
