@@ -45,6 +45,7 @@ module.exports = {
     cost = interaction.options.getNumber('cost');
     charges = interaction.options.getNumber('charges');
 
+		// see scroll and potion for this same comment
     await interaction.reply(`${rank * cost * charges * 50}`);
   },
 };

@@ -20,10 +20,10 @@ module.exports = (number, sides, bonus) => {
     rolls.push(currentDice);
     currentRoll++;
   }
-  if (bonus) rolls.push([bonus]);
 
   calculate = rolls.flat();
   total = calculate.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+	if (bonus) total += parseInt(bonus);
   reducedRolls = rolls.map(r => r.reduce((a, b) => parseInt(a) + parseInt(b), 0));
   low = Math.min(...reducedRolls.flat());
   high = Math.max(...reducedRolls.flat());

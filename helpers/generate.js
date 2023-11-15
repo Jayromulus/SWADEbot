@@ -1,17 +1,13 @@
 const explode = require('./explode'), standard = require('./standard');
 
-module.exports = (number, sides, type, bonus) => {
-  return new Promise(async (res, rej) => {
-    try {
-      if (type === 'explode') {
-        let result = await explode(number, sides, bonus);
-        res(result);
-      } else {
-        let result = await standard(number, sides, bonus);
-        res(result);
-      }
-    } catch (e) {
-      rej(e);
-    }
-  })
+module.exports = ({number, sides, type, bonus}) => {
+	let result;
+
+  if (type === 'explode') {
+    result = explode(number, sides, bonus);
+  } else {
+    result = standard(number, sides, bonus);
+  }
+
+	return result;
 };

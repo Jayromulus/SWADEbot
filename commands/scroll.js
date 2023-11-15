@@ -39,6 +39,8 @@ module.exports = {
     rank = lib[interaction.options.getString('rank').toUpperCase()[0]] ?? -1;
     cost = cleanup(interaction.options.getNumber('cost'));
 
+		// probably clean up output similar to potion
+		// why is this if statement here? [11/15/23 0156]
     if (cost < 0 || rank < 0) await interaction.reply(`Invalid value for parameter: ${rank < 0 ? 'rank' : ''}`);
     return await interaction.reply(`${rank * cost * 50}`);
   },

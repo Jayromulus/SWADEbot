@@ -49,6 +49,8 @@ module.exports = {
     cost = cleanup(interaction.options.getNumber('cost'));
     strength = interaction.options.getString('strength') === 'Major' ? 2 : 1;
 
+		// edit to maybe make the potion being input displayed
+		// long term goal maybe have autofill for spells? (might be bad for future proofing. K.I.S.S.
     return await interaction.reply(`${rank * cost * 25 * strength}`);
   },
 };

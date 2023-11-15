@@ -1,7 +1,10 @@
 module.exports = {
+	calcDamage: require('./calcDamage'),
   cleanup: require('./cleanup'),
+	displayText: require('./displayText'),
+	explode: require('./explode'),
+	generate: require('./generate'),
+	processInput: require('./processInput'),
   rollDice: require('./rollDice'),
-  explode: require('./explode'),
   standard: require('./standard'),
-  generate: require('./generate'),
 };

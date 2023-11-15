@@ -1,81 +1,42 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { generate } = require('../helpers');
-
-const processInput = (input) => {
-  let bonus, diced, number, sides, sliced, type;
-
-  diced = input.split('d');
-  sliced = diced[1].split(diced[1].includes('+') ? '+' : '-');
-
-  number = diced[0];
-  type = diced[1].includes('!') ? 'explode' : 'standard';
-  sides = type === 'explode' ? sliced[0].split('!')[0] : sliced[0];
-  bonus = diced[1].includes('+') ? sliced[1] : -sliced[1];
-
-  return { number, type, sides, bonus };
-};
-
-const displayText = (input1, input2 = []) => {
-  let display;
-  display = `**${input1[0]}:**\n\t- total: ${input1[1].total}\n\t- high: ${input1[1].high}\n\t- low: ${input1[1].low}`;
-  if (!input2.length) return display;
-  display += `\n\n**${input2[0]}:**\n\t- total: ${input2[1].total}\n\t- high: ${input2[1].high}\n\t- low: ${input2[1].low}`;
-  return display;
-};
+const { displayText, generate, processInput } = require('../helpers');
 
 module.exports = {
-  data: new SlashCommandBuilder()
-    .setName('roll')
-    .setDescription('Rolls an exploding trait roll using provided options')
-    .addStringOption(option =>
-      option
-        .setName('set_1')
-        .setDescription('dice to roll #d#')
-        .setRequired(true))
-    .addStringOption(option =>
-      option
-        .setName('set_2')
-        .setDescription('dice to roll #d#')),
-  async execute(interaction) {
-    if (!interaction.isChatInputCommand()) return;
-    let pattern, requiredInput, optionalInput, required, optional, requiredData, optionalData, response;
+	data: new SlashCommandBuilder()
+		.setName('roll')
+		.setDescription('Roll any number of dice using a #d# format, with each set seperated by a comma')
+		.addStringOption(option => 
+			option
+				.setName('input')
+				.setDescription('dice to roll #d#[+/-#]; seperate rolls with ,')
+				.setRequired(true)),
+	async execute(interaction) {
+		if(!interaction.isChatInputCommand()) return;
+		let pattern, rolls, requiredInput, requiredData, response, results, replied;
 
-    pattern = /^\+?([1-9]\d*)d\+?([1-9]\d*)(\!)?(\+|\-[1-9]\d*)?$/;
+		// regex to determine dice input formatting
+		pattern = /^([1-9]\d*)d([1-9]\d*)(\!)?(\+[1-9]\d*|\-[1-9]\d*)?$/;
+		replied = false;
+		// keep track of the results of each roll
+		results = [];
+		// track what each set that needs rolled is
+		rolls = [];
+		// remove spaces from the input and split by commas for each individual set to roll
+		requiredInput = interaction.options.getString('input').replaceAll(' ', '').split(',');
 
-    requiredInput = interaction.options.getString('set_1').trim();
-    optionalInput = interaction.options.getString('set_2') ? interaction.options.getString('set_2').trim() : undefined;
+		// spit out an error when regex doesn't match on one of the rolls !(rework to roll all but the missing case)
+		for(const input of requiredInput) {
+			if(!pattern.test(input)) {
+				replied = true;
+				await interaction.reply(`Invalid Input: ${input}`);
+			}
+			rolls.push(processInput(input));
+		}
 
-    if (!pattern.test(requiredInput) || (optionalInput && !pattern.test(optionalInput))) {
-      if (!pattern.test(requiredInput) && (optionalInput && !pattern.test(optionalInput))) {
-        await interaction.reply(`Invalid Input: ${requiredInput}, ${optionalInput}`);
-      }
-      else if (!pattern.test(requiredInput)) {
-        await interaction.reply(`Invalid Input: ${requiredInput}`);
-      } else {
-        await interaction.reply(`Invalid Input: ${optionalInput}`);
-      }
-      return;
-    };
+		// generate rolls from each input and place them in the results array
+		rolls.forEach(roll => results.push(generate(roll)));
 
-    requiredData = processInput(requiredInput);
-
-    if (optionalInput !== undefined)
-      optionalData = processInput(optionalInput);
-
-    await interaction.reply(`${optionalInput ? 'First Roll: ' : 'Rolling: '}${requiredInput}${optionalInput ? `\nSecond Roll: ${optionalInput}` : ''}`);
-    required = await generate(requiredData.number, requiredData.sides, requiredData.type, requiredData.bonus).catch(err => interaction.editReply(err));
-    if (optionalInput) {
-      optional = await generate(optionalData.number, optionalData.sides, optionalData.type, optionalData.bonus);
-
-      if (required.length === 1 && optional.length === 1)
-        if (required.low === 1 && optional.low === 1)
-          return interaction.editReply('Critical Failure');
-
-      response = displayText([requiredInput, required], [optionalInput, optional]);
-      return interaction.editReply(response);
-    } else {
-      response = displayText([requiredInput, required]);
-      return interaction.editReply(response);
-    }
-  },
+		// send the response only if the error above has not run
+		if(!replied) await interaction.reply(displayText(requiredInput, results));
+	}
 };
