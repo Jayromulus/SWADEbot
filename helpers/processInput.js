@@ -2,6 +2,7 @@ module.exports = (input) => {
 	let bonus, diced, number, sides, sliced, type;
 
 	diced = input.split('d');
+
 	sliced = diced[1].split(diced[1].includes('+') ? '+' : '-');
 
 	number = diced[0];
