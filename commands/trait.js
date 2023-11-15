@@ -23,6 +23,7 @@ module.exports = {
         .setName('wild')
         .setDescription('size of modified wild die (optional)')),
   async execute(interaction) {
+		// go through and add comments for this
     if (!interaction.isChatInputCommand()) return;
     let trait, wild, bonus, traitRoll, wildRoll, response;
 

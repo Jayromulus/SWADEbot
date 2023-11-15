@@ -1,9 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { cleanup } = require('../helpers');
-
-const calcDamage = (tough, hurt) => {
-  return Math.floor((hurt - tough) / 4);
-};
+const { calcDamage, cleanup } = require('../helpers');
 
 module.exports = {
   data: new SlashCommandBuilder()

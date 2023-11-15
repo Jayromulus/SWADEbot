@@ -49,3 +49,5 @@ module.exports = {
     return await interaction.reply({ embeds: [display] });
   }
 };
+
+// honestly this entire command needs either removed or just straight up rewritten. it's probably all if not mostly garbage.

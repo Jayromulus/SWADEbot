@@ -1,6 +1,6 @@
 const rollDice = require('./rollDice');
 
-module.exports = async (number, sides, bonus) => {
+module.exports = (number, sides, bonus) => {
   let rolls = [];
   let high, low, length, total;
 

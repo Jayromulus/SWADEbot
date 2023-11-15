@@ -1,7 +1,10 @@
-module.exports = function displayText(input1, input2 = []) {
+module.exports = (inputs, results) => {
 	let display;
-	display = `**${input1[0]}:**\n- total: ${input1[1].total}\n- high: ${input1[1].high}\n- low: ${input1[1].low}`;
-	if(!input2.length) return display;
-	display += `\n\n**${input2[0]}:**\n- total: ${input2[1].total}\n- high: ${input2[1].high}\n- low: ${input2[1].low}`;
+	let buffer = [];
+
+	results.forEach((roll, index) => buffer.push(`**${inputs[index]}:**\n- total: ${roll.total}\n- high: ${roll.high}\n- low: ${roll.low}`));
+
+	display = buffer.join('\n\n');
+
 	return display;
 };

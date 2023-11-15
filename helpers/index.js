@@ -1,4 +1,5 @@
 module.exports = {
+	calcDamage: require('./calcDamage'),
   cleanup: require('./cleanup'),
 	displayText: require('./displayText'),
 	explode: require('./explode'),

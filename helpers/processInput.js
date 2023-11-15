@@ -1,4 +1,4 @@
-module.exports = function processInput(input) {
+module.exports = (input) => {
 	let bonus, diced, number, sides, sliced, type;
 
 	diced = input.split('d');
