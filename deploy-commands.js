@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { REST, Routes } = require('discord.js');
+const { CLIENT, GUILD, TOKEN } = process.env
 const fs = require('node:fs');
 
 const commands = [];
@@ -15,19 +16,19 @@ for (const file of commandFiles) {
 };
 
 // Construct and prepare an instance of the REST module, this is used to update the commands through the discord api
-const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
+const rest = new REST({ version: '10' }).setToken(TOKEN);
 
 (async () => {
   try {
     console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
     // update commands for a client (application) in a given guild (server), remove the guild to just affect the client as a whole
-    await rest.put(Routes.applicationGuildCommands(process.env.CLIENT, process.env.GUILD), { body: [] })
+    await rest.put(Routes.applicationGuildCommands(CLIENT, GUILD), { body: [] })
       .then(() => console.log('Successfully deleted all guild commands.'))
       .catch(console.error);
 
     // after setting the command list to empty, update it again using the new commands list as the body
-    const data = await rest.put(Routes.applicationGuildCommands(process.env.CLIENT, process.env.GUILD), { body: commands });
+    const data = await rest.put(Routes.applicationGuildCommands(CLIENT, GUILD), { body: commands });
 
     console.log(`Successfully reloaded ${data.length} application (/) commands.`);
   } catch (error) {
